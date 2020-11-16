@@ -1,0 +1,48 @@
+﻿@model Piiii.web.Models.DemandViewModel
+@{
+    ViewBag.Title = "ListeConge";
+    Layout = "~/Views/Shared/Layout1.cshtml";
+
+}
+<a href="@Url.Action("list","conge")">ListeConge</a>
+<div class="container">
+    <div class="form-group">
+        <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+            <input type="text" id="Search" placeholder="Search" class="form-control1 ng-invalid ng-invalid-required ng-touched" />
+        </div>
+
+
+
+    </div>
+
+</div>
+<div class="panel-body no-padding">
+    <table class="table table-striped">
+        <tr>
+
+            
+            <th>Date_Debut</th>
+            <th>Date_Fin</th>
+            <th>Raison</th>
+            <th>Action</th>
+        </tr>
+        @foreach (var r in ViewBag.result)
+        {
+
+            <tr class="Search">
+                
+              
+                <td>@r.date_debut</td>
+                <td>@r.date_fin</td>
+                <td>@r.raison</td>
+                
+
+
+                <td>@Html.ActionLink("Edit", "Edit", new { id = r.userId })</td>
+                <td>@Html.ActionLink("Delete", "Delete", new { id = r.userId })</td>
+            </tr>
+
+        }
+    </table>
+</div>

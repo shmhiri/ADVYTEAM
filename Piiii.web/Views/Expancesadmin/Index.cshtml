@@ -1,0 +1,166 @@
+﻿@model IEnumerable<Piiii.domain.missionexpenses>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout1.cshtml";
+}
+
+
+<h2>Mission Expences</h2>
+
+<div class="row animate-box">
+    <div class="col-md-6 col-md-offset-3">
+        <div class="row">
+            <div class="col-md-12">
+
+                <form class="form-inline qbstp-header-subscribe">
+                    <div class="col-three-forth">
+                        <div class="form-group">
+                            <div>
+                                @Html.TextBox("filtre", "Search ", new { @class = "form-control", placeholder = "Search " })
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-one-third">
+                        <div class="form-group">
+                            <button type="submit" id="submit" class="btn btn-primary">Search Now</button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+@{
+    var selectList = new SelectList(
+        new List<SelectListItem>
+        {
+new SelectListItem {Text = "Transport", Value = "Transport"},
+new SelectListItem {Text = "Hotel", Value = "Hotel"},
+new SelectListItem {Text = "Resto", Value = "Resto"},
+new SelectListItem {Text = "Other", Value = "Other"},
+        }, "Value", "Text");
+}
+
+<div style="width:400px">
+    <form>
+        <div class="col-three-forth">
+
+            @Html.DropDownList("lama", selectList, new { @class = "form-control" })
+
+
+        </div>
+        <div>
+
+            <button type="submit" id="la" class="btn btn-primary">filtre</button>
+        </div>
+    </form>
+</div>
+
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.cost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.image)
+
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.kilomtrage)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.isApproved)
+        </th>
+        <th>detail</th>
+        <th>is aproved</th>
+        <th>payment</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.cost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.image)
+                <img style="width:200px; height:200px" src="@Url.Content("~/Uploads/"+item.image)" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.kilomtrage)
+            </td>
+        
+            <td>
+                @Html.DisplayFor(modelItem => item.type)
+            </td>
+            <td>
+
+                @if (item.isApproved == 0)
+                {
+                    <h2>mission is not aproved</h2>
+
+                }
+                else
+                {
+                    <h2>mission is aproved</h2>
+                }
+            </td>
+            <td>
+             
+                @Html.ActionLink("Details", "Details", new { id = item.refrence }) 
+             
+            </td>
+            <td>
+                @if (item.isApproved == 0)
+                {
+                    @Html.ActionLink("aprove mission", "Like", "Expances", new { id = item.refrence }, null)
+
+
+                }
+                else
+                {
+                    @Html.ActionLink("not aprove a mission", "Dislike", "Expances", new { id = item.refrence }, null)
+
+
+                }
+            </td>
+       
+        </tr>
+    }
+
+
+</table>
+<div>
+    <a href="/Expancesadmin/PrintPDF" class="btn  btn-success">PDF</a>
+    <h2>Total number of kilometre passed</h2>
+    @Model.Sum(i => i.kilomtrage) <h2>KM</h2>
+
+</div>
+<div>
+    <h2>Total of monny spent</h2>
+    @Model.Sum(i => i.cost) <h2>€</h2>
+
+</div>

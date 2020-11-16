@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Piiii.domain.question>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout1.cshtml";
+}
+
+<div class="colorlib-work">
+    <div class="container">
+        <h2>Index</h2>
+
+        <p>
+
+            @Html.ActionLink("Back to List", "Index","Quiz")
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.question_name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.question_description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.quiz_id_Quiz)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.question_name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.question_description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.quiz_id_Quiz)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.id_Question }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.id_Question }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.id_Question }) |
+                        @Html.ActionLink("View Answers", "Index", "Answer", new { id = item.id_Question }, null)|
+                        @Html.ActionLink("Add Answer", "Create", "Answer", new { id = item.id_Question }, null)
+                    </td>
+                </tr>
+            }
+
+        </table>
+</div>
+</div>

@@ -1,0 +1,1755 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\EntityFramework.6.3.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DCA467B5-12A3-46E6-829E-4627BEF71B0D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Piiii.web</RootNamespace>
+    <AssemblyName>Piiii.web</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.3.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.3.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.6.1\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.2\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.2\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.4.0.0\lib\net451\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.0.0\lib\net451\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.0.0\lib\net451\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.4.0.0\lib\net451\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.4.0.0\lib\net451\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.4.0.0\lib\net451\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.4.0.0\lib\net451\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.4.0.0\lib\net451\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.4.0.0\lib\net451\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.18.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.18\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.EntityFramework, Version=8.0.18.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.EntityFramework.8.0.18\lib\net452\MySql.Data.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
+      <HintPath>..\packages\SSH.NET.2016.1.0\lib\net40\Renci.SshNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Rotativa, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rotativa.1.7.3\lib\net461\Rotativa.dll</HintPath>
+    </Reference>
+    <Reference Include="Stripe.net, Version=33.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stripe.net.33.9.0\lib\net45\Stripe.net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.Formatting.Extension.5.2.3.0\lib\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.Formatting.Extension.5.2.3.0\lib\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.Formatting.Extension.5.2.3.0\lib\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Tesseract, Version=3.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Tesseract.3.3.0\lib\net45\Tesseract.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.4.0.0\lib\net451\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ActivityController.cs" />
+    <Compile Include="Controllers\AnswerController.cs" />
+    <Compile Include="Controllers\CongeController.cs" />
+    <Compile Include="Controllers\EmployeController.cs" />
+    <Compile Include="Controllers\EvaluationController.cs" />
+    <Compile Include="Controllers\ExpancesadminController.cs" />
+    <Compile Include="Controllers\ExpancesController.cs" />
+    <Compile Include="Controllers\FormationController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ManagementController.cs" />
+    <Compile Include="Controllers\MissController.cs" />
+    <Compile Include="Controllers\Missionrhcontroller.cs" />
+    <Compile Include="Controllers\Missionempcontroller.cs" />
+    <Compile Include="Controllers\missionexpensesController.cs" />
+    <Compile Include="Controllers\ProjectController.cs" />
+    <Compile Include="Controllers\ProjectModelsController.cs" />
+    <Compile Include="Controllers\QuestionAnswersController.cs" />
+    <Compile Include="Controllers\QuestionController.cs" />
+    <Compile Include="Controllers\QuizController.cs" />
+    <Compile Include="Controllers\selfevaluationController.cs" />
+    <Compile Include="Controllers\TimesheetModelsController.cs" />
+    <Compile Include="Controllers\VisualizeDataController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ActivityModel.cs" />
+    <Compile Include="Models\answerModel.cs" />
+    <Compile Include="Models\catalogModel.cs" />
+    <Compile Include="Models\CongViewModels.cs" />
+    <Compile Include="Models\employeeModel.cs" />
+    <Compile Include="Models\EmployeViewModels.cs" />
+    <Compile Include="Models\evaluation360Model.cs" />
+    <Compile Include="Models\formationModel.cs" />
+    <Compile Include="Models\gmail.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\mission.cs" />
+    <Compile Include="Models\ProjectModel.cs" />
+    <Compile Include="Models\Project_ActivityModel.cs" />
+    <Compile Include="Models\questionModel.cs" />
+    <Compile Include="Models\quizModel.cs" />
+    <Compile Include="Models\QuizQuestionAnswers.cs" />
+    <Compile Include="Models\selfevaluationModel.cs" />
+    <Compile Include="Models\StatResult.cs" />
+    <Compile Include="Models\TimesheetModel.cs" />
+    <Compile Include="Models\Timesheet_ActivityModel.cs" />
+    <Compile Include="Models\user.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\assetsfront\css\bootstrap.min.css" />
+    <Content Include="Content\assetsfront\css\emoji.css" />
+    <Content Include="Content\assetsfront\css\emoji\+1.png" />
+    <Content Include="Content\assetsfront\css\emoji\-1.png" />
+    <Content Include="Content\assetsfront\css\emoji\100.png" />
+    <Content Include="Content\assetsfront\css\emoji\1234.png" />
+    <Content Include="Content\assetsfront\css\emoji\8ball.png" />
+    <Content Include="Content\assetsfront\css\emoji\a.png" />
+    <Content Include="Content\assetsfront\css\emoji\ab.png" />
+    <Content Include="Content\assetsfront\css\emoji\abc.png" />
+    <Content Include="Content\assetsfront\css\emoji\abcd.png" />
+    <Content Include="Content\assetsfront\css\emoji\accept.png" />
+    <Content Include="Content\assetsfront\css\emoji\aerial_tramway.png" />
+    <Content Include="Content\assetsfront\css\emoji\airplane.png" />
+    <Content Include="Content\assetsfront\css\emoji\alarm_clock.png" />
+    <Content Include="Content\assetsfront\css\emoji\alien.png" />
+    <Content Include="Content\assetsfront\css\emoji\ambulance.png" />
+    <Content Include="Content\assetsfront\css\emoji\anchor.png" />
+    <Content Include="Content\assetsfront\css\emoji\angel.png" />
+    <Content Include="Content\assetsfront\css\emoji\anger.png" />
+    <Content Include="Content\assetsfront\css\emoji\angry.png" />
+    <Content Include="Content\assetsfront\css\emoji\anguished.png" />
+    <Content Include="Content\assetsfront\css\emoji\ant.png" />
+    <Content Include="Content\assetsfront\css\emoji\apple.png" />
+    <Content Include="Content\assetsfront\css\emoji\aquarius.png" />
+    <Content Include="Content\assetsfront\css\emoji\aries.png" />
+    <Content Include="Content\assetsfront\css\emoji\arrows_clockwise.png" />
+    <Content Include="Content\assetsfront\css\emoji\arrows_counterclockwise.png" />
+    <Content Include="Content\assetsfront\css\emoji\arrow_backward.png" />
+    <Content Include="Content\assetsfront\css\emoji\arrow_double_down.png" />
+    <Content Include="Content\assetsfront\css\emoji\arrow_double_up.png" />
+    <Content Include="Content\assetsfront\css\emoji\arrow_down.png" />
+    <Content Include="Content\assetsfront\css\emoji\arrow_down_small.png" />
+    <Content Include="Content\assetsfront\css\emoji\arrow_forward.png" />
+    <Content Include="Content\assetsfront\css\emoji\arrow_heading_down.png" />
+    <Content Include="Content\assetsfront\css\emoji\arrow_heading_up.png" />
+    <Content Include="Content\assetsfront\css\emoji\arrow_left.png" />
+    <Content Include="Content\assetsfront\css\emoji\arrow_lower_left.png" />
+    <Content Include="Content\assetsfront\css\emoji\arrow_lower_right.png" />
+    <Content Include="Content\assetsfront\css\emoji\arrow_right.png" />
+    <Content Include="Content\assetsfront\css\emoji\arrow_right_hook.png" />
+    <Content Include="Content\assetsfront\css\emoji\arrow_up.png" />
+    <Content Include="Content\assetsfront\css\emoji\arrow_upper_left.png" />
+    <Content Include="Content\assetsfront\css\emoji\arrow_upper_right.png" />
+    <Content Include="Content\assetsfront\css\emoji\arrow_up_down.png" />
+    <Content Include="Content\assetsfront\css\emoji\arrow_up_small.png" />
+    <Content Include="Content\assetsfront\css\emoji\art.png" />
+    <Content Include="Content\assetsfront\css\emoji\articulated_lorry.png" />
+    <Content Include="Content\assetsfront\css\emoji\astonished.png" />
+    <Content Include="Content\assetsfront\css\emoji\atm.png" />
+    <Content Include="Content\assetsfront\css\emoji\b.png" />
+    <Content Include="Content\assetsfront\css\emoji\baby.png" />
+    <Content Include="Content\assetsfront\css\emoji\baby_bottle.png" />
+    <Content Include="Content\assetsfront\css\emoji\baby_chick.png" />
+    <Content Include="Content\assetsfront\css\emoji\baby_symbol.png" />
+    <Content Include="Content\assetsfront\css\emoji\back.png" />
+    <Content Include="Content\assetsfront\css\emoji\baggage_claim.png" />
+    <Content Include="Content\assetsfront\css\emoji\balloon.png" />
+    <Content Include="Content\assetsfront\css\emoji\ballot_box_with_check.png" />
+    <Content Include="Content\assetsfront\css\emoji\bamboo.png" />
+    <Content Include="Content\assetsfront\css\emoji\banana.png" />
+    <Content Include="Content\assetsfront\css\emoji\bangbang.png" />
+    <Content Include="Content\assetsfront\css\emoji\bank.png" />
+    <Content Include="Content\assetsfront\css\emoji\barber.png" />
+    <Content Include="Content\assetsfront\css\emoji\bar_chart.png" />
+    <Content Include="Content\assetsfront\css\emoji\baseball.png" />
+    <Content Include="Content\assetsfront\css\emoji\basketball.png" />
+    <Content Include="Content\assetsfront\css\emoji\bath.png" />
+    <Content Include="Content\assetsfront\css\emoji\bathtub.png" />
+    <Content Include="Content\assetsfront\css\emoji\battery.png" />
+    <Content Include="Content\assetsfront\css\emoji\bear.png" />
+    <Content Include="Content\assetsfront\css\emoji\bee.png" />
+    <Content Include="Content\assetsfront\css\emoji\beer.png" />
+    <Content Include="Content\assetsfront\css\emoji\beers.png" />
+    <Content Include="Content\assetsfront\css\emoji\beetle.png" />
+    <Content Include="Content\assetsfront\css\emoji\beginner.png" />
+    <Content Include="Content\assetsfront\css\emoji\bell.png" />
+    <Content Include="Content\assetsfront\css\emoji\bento.png" />
+    <Content Include="Content\assetsfront\css\emoji\bicyclist.png" />
+    <Content Include="Content\assetsfront\css\emoji\bike.png" />
+    <Content Include="Content\assetsfront\css\emoji\bikini.png" />
+    <Content Include="Content\assetsfront\css\emoji\bird.png" />
+    <Content Include="Content\assetsfront\css\emoji\birthday.png" />
+    <Content Include="Content\assetsfront\css\emoji\black_circle.png" />
+    <Content Include="Content\assetsfront\css\emoji\black_joker.png" />
+    <Content Include="Content\assetsfront\css\emoji\black_medium_small_square.png" />
+    <Content Include="Content\assetsfront\css\emoji\black_medium_square.png" />
+    <Content Include="Content\assetsfront\css\emoji\black_nib.png" />
+    <Content Include="Content\assetsfront\css\emoji\black_small_square.png" />
+    <Content Include="Content\assetsfront\css\emoji\black_square.png" />
+    <Content Include="Content\assetsfront\css\emoji\black_square_button.png" />
+    <Content Include="Content\assetsfront\css\emoji\blossom.png" />
+    <Content Include="Content\assetsfront\css\emoji\blowfish.png" />
+    <Content Include="Content\assetsfront\css\emoji\blue_book.png" />
+    <Content Include="Content\assetsfront\css\emoji\blue_car.png" />
+    <Content Include="Content\assetsfront\css\emoji\blue_heart.png" />
+    <Content Include="Content\assetsfront\css\emoji\blush.png" />
+    <Content Include="Content\assetsfront\css\emoji\boar.png" />
+    <Content Include="Content\assetsfront\css\emoji\boat.png" />
+    <Content Include="Content\assetsfront\css\emoji\bomb.png" />
+    <Content Include="Content\assetsfront\css\emoji\book.png" />
+    <Content Include="Content\assetsfront\css\emoji\bookmark.png" />
+    <Content Include="Content\assetsfront\css\emoji\bookmark_tabs.png" />
+    <Content Include="Content\assetsfront\css\emoji\books.png" />
+    <Content Include="Content\assetsfront\css\emoji\boom.png" />
+    <Content Include="Content\assetsfront\css\emoji\boot.png" />
+    <Content Include="Content\assetsfront\css\emoji\bouquet.png" />
+    <Content Include="Content\assetsfront\css\emoji\bow.png" />
+    <Content Include="Content\assetsfront\css\emoji\bowling.png" />
+    <Content Include="Content\assetsfront\css\emoji\bowtie.png" />
+    <Content Include="Content\assetsfront\css\emoji\boy.png" />
+    <Content Include="Content\assetsfront\css\emoji\bread.png" />
+    <Content Include="Content\assetsfront\css\emoji\bride_with_veil.png" />
+    <Content Include="Content\assetsfront\css\emoji\bridge_at_night.png" />
+    <Content Include="Content\assetsfront\css\emoji\briefcase.png" />
+    <Content Include="Content\assetsfront\css\emoji\broken_heart.png" />
+    <Content Include="Content\assetsfront\css\emoji\bug.png" />
+    <Content Include="Content\assetsfront\css\emoji\bulb.png" />
+    <Content Include="Content\assetsfront\css\emoji\bullettrain_front.png" />
+    <Content Include="Content\assetsfront\css\emoji\bullettrain_side.png" />
+    <Content Include="Content\assetsfront\css\emoji\bus.png" />
+    <Content Include="Content\assetsfront\css\emoji\busstop.png" />
+    <Content Include="Content\assetsfront\css\emoji\busts_in_silhouette.png" />
+    <Content Include="Content\assetsfront\css\emoji\bust_in_silhouette.png" />
+    <Content Include="Content\assetsfront\css\emoji\cactus.png" />
+    <Content Include="Content\assetsfront\css\emoji\cake.png" />
+    <Content Include="Content\assetsfront\css\emoji\calendar.png" />
+    <Content Include="Content\assetsfront\css\emoji\calling.png" />
+    <Content Include="Content\assetsfront\css\emoji\camel.png" />
+    <Content Include="Content\assetsfront\css\emoji\camera.png" />
+    <Content Include="Content\assetsfront\css\emoji\cancer.png" />
+    <Content Include="Content\assetsfront\css\emoji\candy.png" />
+    <Content Include="Content\assetsfront\css\emoji\capital_abcd.png" />
+    <Content Include="Content\assetsfront\css\emoji\capricorn.png" />
+    <Content Include="Content\assetsfront\css\emoji\car.png" />
+    <Content Include="Content\assetsfront\css\emoji\card_index.png" />
+    <Content Include="Content\assetsfront\css\emoji\carousel_horse.png" />
+    <Content Include="Content\assetsfront\css\emoji\cat.png" />
+    <Content Include="Content\assetsfront\css\emoji\cat2.png" />
+    <Content Include="Content\assetsfront\css\emoji\cd.png" />
+    <Content Include="Content\assetsfront\css\emoji\chart.png" />
+    <Content Include="Content\assetsfront\css\emoji\chart_with_downwards_trend.png" />
+    <Content Include="Content\assetsfront\css\emoji\chart_with_upwards_trend.png" />
+    <Content Include="Content\assetsfront\css\emoji\checkered_flag.png" />
+    <Content Include="Content\assetsfront\css\emoji\cherries.png" />
+    <Content Include="Content\assetsfront\css\emoji\cherry_blossom.png" />
+    <Content Include="Content\assetsfront\css\emoji\chestnut.png" />
+    <Content Include="Content\assetsfront\css\emoji\chicken.png" />
+    <Content Include="Content\assetsfront\css\emoji\children_crossing.png" />
+    <Content Include="Content\assetsfront\css\emoji\chocolate_bar.png" />
+    <Content Include="Content\assetsfront\css\emoji\christmas_tree.png" />
+    <Content Include="Content\assetsfront\css\emoji\church.png" />
+    <Content Include="Content\assetsfront\css\emoji\cinema.png" />
+    <Content Include="Content\assetsfront\css\emoji\circus_tent.png" />
+    <Content Include="Content\assetsfront\css\emoji\city_sunrise.png" />
+    <Content Include="Content\assetsfront\css\emoji\city_sunset.png" />
+    <Content Include="Content\assetsfront\css\emoji\cl.png" />
+    <Content Include="Content\assetsfront\css\emoji\clap.png" />
+    <Content Include="Content\assetsfront\css\emoji\clapper.png" />
+    <Content Include="Content\assetsfront\css\emoji\clipboard.png" />
+    <Content Include="Content\assetsfront\css\emoji\clock1.png" />
+    <Content Include="Content\assetsfront\css\emoji\clock10.png" />
+    <Content Include="Content\assetsfront\css\emoji\clock1030.png" />
+    <Content Include="Content\assetsfront\css\emoji\clock11.png" />
+    <Content Include="Content\assetsfront\css\emoji\clock1130.png" />
+    <Content Include="Content\assetsfront\css\emoji\clock12.png" />
+    <Content Include="Content\assetsfront\css\emoji\clock1230.png" />
+    <Content Include="Content\assetsfront\css\emoji\clock130.png" />
+    <Content Include="Content\assetsfront\css\emoji\clock2.png" />
+    <Content Include="Content\assetsfront\css\emoji\clock230.png" />
+    <Content Include="Content\assetsfront\css\emoji\clock3.png" />
+    <Content Include="Content\assetsfront\css\emoji\clock330.png" />
+    <Content Include="Content\assetsfront\css\emoji\clock4.png" />
+    <Content Include="Content\assetsfront\css\emoji\clock430.png" />
+    <Content Include="Content\assetsfront\css\emoji\clock5.png" />
+    <Content Include="Content\assetsfront\css\emoji\clock530.png" />
+    <Content Include="Content\assetsfront\css\emoji\clock6.png" />
+    <Content Include="Content\assetsfront\css\emoji\clock630.png" />
+    <Content Include="Content\assetsfront\css\emoji\clock7.png" />
+    <Content Include="Content\assetsfront\css\emoji\clock730.png" />
+    <Content Include="Content\assetsfront\css\emoji\clock8.png" />
+    <Content Include="Content\assetsfront\css\emoji\clock830.png" />
+    <Content Include="Content\assetsfront\css\emoji\clock9.png" />
+    <Content Include="Content\assetsfront\css\emoji\clock930.png" />
+    <Content Include="Content\assetsfront\css\emoji\closed_book.png" />
+    <Content Include="Content\assetsfront\css\emoji\closed_lock_with_key.png" />
+    <Content Include="Content\assetsfront\css\emoji\closed_umbrella.png" />
+    <Content Include="Content\assetsfront\css\emoji\cloud.png" />
+    <Content Include="Content\assetsfront\css\emoji\clubs.png" />
+    <Content Include="Content\assetsfront\css\emoji\cn.png" />
+    <Content Include="Content\assetsfront\css\emoji\cocktail.png" />
+    <Content Include="Content\assetsfront\css\emoji\coffee.png" />
+    <Content Include="Content\assetsfront\css\emoji\cold_sweat.png" />
+    <Content Include="Content\assetsfront\css\emoji\collision.png" />
+    <Content Include="Content\assetsfront\css\emoji\computer.png" />
+    <Content Include="Content\assetsfront\css\emoji\confetti_ball.png" />
+    <Content Include="Content\assetsfront\css\emoji\confounded.png" />
+    <Content Include="Content\assetsfront\css\emoji\confused.png" />
+    <Content Include="Content\assetsfront\css\emoji\congratulations.png" />
+    <Content Include="Content\assetsfront\css\emoji\construction.png" />
+    <Content Include="Content\assetsfront\css\emoji\construction_worker.png" />
+    <Content Include="Content\assetsfront\css\emoji\convenience_store.png" />
+    <Content Include="Content\assetsfront\css\emoji\cookie.png" />
+    <Content Include="Content\assetsfront\css\emoji\cool.png" />
+    <Content Include="Content\assetsfront\css\emoji\cop.png" />
+    <Content Include="Content\assetsfront\css\emoji\copyright.png" />
+    <Content Include="Content\assetsfront\css\emoji\corn.png" />
+    <Content Include="Content\assetsfront\css\emoji\couple.png" />
+    <Content Include="Content\assetsfront\css\emoji\couplekiss.png" />
+    <Content Include="Content\assetsfront\css\emoji\couple_with_heart.png" />
+    <Content Include="Content\assetsfront\css\emoji\cow.png" />
+    <Content Include="Content\assetsfront\css\emoji\cow2.png" />
+    <Content Include="Content\assetsfront\css\emoji\credit_card.png" />
+    <Content Include="Content\assetsfront\css\emoji\crocodile.png" />
+    <Content Include="Content\assetsfront\css\emoji\crossed_flags.png" />
+    <Content Include="Content\assetsfront\css\emoji\crown.png" />
+    <Content Include="Content\assetsfront\css\emoji\cry.png" />
+    <Content Include="Content\assetsfront\css\emoji\crying_cat_face.png" />
+    <Content Include="Content\assetsfront\css\emoji\crystal_ball.png" />
+    <Content Include="Content\assetsfront\css\emoji\cupid.png" />
+    <Content Include="Content\assetsfront\css\emoji\curly_loop.png" />
+    <Content Include="Content\assetsfront\css\emoji\currency_exchange.png" />
+    <Content Include="Content\assetsfront\css\emoji\curry.png" />
+    <Content Include="Content\assetsfront\css\emoji\custard.png" />
+    <Content Include="Content\assetsfront\css\emoji\customs.png" />
+    <Content Include="Content\assetsfront\css\emoji\cyclone.png" />
+    <Content Include="Content\assetsfront\css\emoji\dancer.png" />
+    <Content Include="Content\assetsfront\css\emoji\dancers.png" />
+    <Content Include="Content\assetsfront\css\emoji\dango.png" />
+    <Content Include="Content\assetsfront\css\emoji\dart.png" />
+    <Content Include="Content\assetsfront\css\emoji\dash.png" />
+    <Content Include="Content\assetsfront\css\emoji\date.png" />
+    <Content Include="Content\assetsfront\css\emoji\de.png" />
+    <Content Include="Content\assetsfront\css\emoji\deciduous_tree.png" />
+    <Content Include="Content\assetsfront\css\emoji\department_store.png" />
+    <Content Include="Content\assetsfront\css\emoji\diamonds.png" />
+    <Content Include="Content\assetsfront\css\emoji\diamond_shape_with_a_dot_inside.png" />
+    <Content Include="Content\assetsfront\css\emoji\disappointed.png" />
+    <Content Include="Content\assetsfront\css\emoji\disappointed_relieved.png" />
+    <Content Include="Content\assetsfront\css\emoji\dizzy.png" />
+    <Content Include="Content\assetsfront\css\emoji\dizzy_face.png" />
+    <Content Include="Content\assetsfront\css\emoji\dog.png" />
+    <Content Include="Content\assetsfront\css\emoji\dog2.png" />
+    <Content Include="Content\assetsfront\css\emoji\dollar.png" />
+    <Content Include="Content\assetsfront\css\emoji\dolls.png" />
+    <Content Include="Content\assetsfront\css\emoji\dolphin.png" />
+    <Content Include="Content\assetsfront\css\emoji\donut.png" />
+    <Content Include="Content\assetsfront\css\emoji\door.png" />
+    <Content Include="Content\assetsfront\css\emoji\doughnut.png" />
+    <Content Include="Content\assetsfront\css\emoji\do_not_litter.png" />
+    <Content Include="Content\assetsfront\css\emoji\dragon.png" />
+    <Content Include="Content\assetsfront\css\emoji\dragon_face.png" />
+    <Content Include="Content\assetsfront\css\emoji\dress.png" />
+    <Content Include="Content\assetsfront\css\emoji\dromedary_camel.png" />
+    <Content Include="Content\assetsfront\css\emoji\droplet.png" />
+    <Content Include="Content\assetsfront\css\emoji\dvd.png" />
+    <Content Include="Content\assetsfront\css\emoji\e-mail.png" />
+    <Content Include="Content\assetsfront\css\emoji\ear.png" />
+    <Content Include="Content\assetsfront\css\emoji\earth_africa.png" />
+    <Content Include="Content\assetsfront\css\emoji\earth_americas.png" />
+    <Content Include="Content\assetsfront\css\emoji\earth_asia.png" />
+    <Content Include="Content\assetsfront\css\emoji\ear_of_rice.png" />
+    <Content Include="Content\assetsfront\css\emoji\egg.png" />
+    <Content Include="Content\assetsfront\css\emoji\eggplant.png" />
+    <Content Include="Content\assetsfront\css\emoji\eight.png" />
+    <Content Include="Content\assetsfront\css\emoji\eight_pointed_black_star.png" />
+    <Content Include="Content\assetsfront\css\emoji\eight_spoked_asterisk.png" />
+    <Content Include="Content\assetsfront\css\emoji\electric_plug.png" />
+    <Content Include="Content\assetsfront\css\emoji\elephant.png" />
+    <Content Include="Content\assetsfront\css\emoji\email.png" />
+    <Content Include="Content\assetsfront\css\emoji\end.png" />
+    <Content Include="Content\assetsfront\css\emoji\envelope.png" />
+    <Content Include="Content\assetsfront\css\emoji\es.png" />
+    <Content Include="Content\assetsfront\css\emoji\euro.png" />
+    <Content Include="Content\assetsfront\css\emoji\european_castle.png" />
+    <Content Include="Content\assetsfront\css\emoji\european_post_office.png" />
+    <Content Include="Content\assetsfront\css\emoji\evergreen_tree.png" />
+    <Content Include="Content\assetsfront\css\emoji\exclamation.png" />
+    <Content Include="Content\assetsfront\css\emoji\expressionless.png" />
+    <Content Include="Content\assetsfront\css\emoji\eyeglasses.png" />
+    <Content Include="Content\assetsfront\css\emoji\eyes.png" />
+    <Content Include="Content\assetsfront\css\emoji\facepunch.png" />
+    <Content Include="Content\assetsfront\css\emoji\factory.png" />
+    <Content Include="Content\assetsfront\css\emoji\fallen_leaf.png" />
+    <Content Include="Content\assetsfront\css\emoji\family.png" />
+    <Content Include="Content\assetsfront\css\emoji\fast_forward.png" />
+    <Content Include="Content\assetsfront\css\emoji\fax.png" />
+    <Content Include="Content\assetsfront\css\emoji\fearful.png" />
+    <Content Include="Content\assetsfront\css\emoji\feelsgood.png" />
+    <Content Include="Content\assetsfront\css\emoji\feet.png" />
+    <Content Include="Content\assetsfront\css\emoji\ferris_wheel.png" />
+    <Content Include="Content\assetsfront\css\emoji\file_folder.png" />
+    <Content Include="Content\assetsfront\css\emoji\finnadie.png" />
+    <Content Include="Content\assetsfront\css\emoji\fire.png" />
+    <Content Include="Content\assetsfront\css\emoji\fireworks.png" />
+    <Content Include="Content\assetsfront\css\emoji\fire_engine.png" />
+    <Content Include="Content\assetsfront\css\emoji\first_quarter_moon.png" />
+    <Content Include="Content\assetsfront\css\emoji\first_quarter_moon_with_face.png" />
+    <Content Include="Content\assetsfront\css\emoji\fish.png" />
+    <Content Include="Content\assetsfront\css\emoji\fishing_pole_and_fish.png" />
+    <Content Include="Content\assetsfront\css\emoji\fish_cake.png" />
+    <Content Include="Content\assetsfront\css\emoji\fist.png" />
+    <Content Include="Content\assetsfront\css\emoji\five.png" />
+    <Content Include="Content\assetsfront\css\emoji\flags.png" />
+    <Content Include="Content\assetsfront\css\emoji\flashlight.png" />
+    <Content Include="Content\assetsfront\css\emoji\floppy_disk.png" />
+    <Content Include="Content\assetsfront\css\emoji\flower_playing_cards.png" />
+    <Content Include="Content\assetsfront\css\emoji\flushed.png" />
+    <Content Include="Content\assetsfront\css\emoji\foggy.png" />
+    <Content Include="Content\assetsfront\css\emoji\football.png" />
+    <Content Include="Content\assetsfront\css\emoji\fork_and_knife.png" />
+    <Content Include="Content\assetsfront\css\emoji\fountain.png" />
+    <Content Include="Content\assetsfront\css\emoji\four.png" />
+    <Content Include="Content\assetsfront\css\emoji\four_leaf_clover.png" />
+    <Content Include="Content\assetsfront\css\emoji\fr.png" />
+    <Content Include="Content\assetsfront\css\emoji\free.png" />
+    <Content Include="Content\assetsfront\css\emoji\fried_shrimp.png" />
+    <Content Include="Content\assetsfront\css\emoji\fries.png" />
+    <Content Include="Content\assetsfront\css\emoji\frog.png" />
+    <Content Include="Content\assetsfront\css\emoji\frowning.png" />
+    <Content Include="Content\assetsfront\css\emoji\fu.png" />
+    <Content Include="Content\assetsfront\css\emoji\fuelpump.png" />
+    <Content Include="Content\assetsfront\css\emoji\full_moon.png" />
+    <Content Include="Content\assetsfront\css\emoji\full_moon_with_face.png" />
+    <Content Include="Content\assetsfront\css\emoji\game_die.png" />
+    <Content Include="Content\assetsfront\css\emoji\gb.png" />
+    <Content Include="Content\assetsfront\css\emoji\gem.png" />
+    <Content Include="Content\assetsfront\css\emoji\gemini.png" />
+    <Content Include="Content\assetsfront\css\emoji\ghost.png" />
+    <Content Include="Content\assetsfront\css\emoji\gift.png" />
+    <Content Include="Content\assetsfront\css\emoji\gift_heart.png" />
+    <Content Include="Content\assetsfront\css\emoji\girl.png" />
+    <Content Include="Content\assetsfront\css\emoji\globe_with_meridians.png" />
+    <Content Include="Content\assetsfront\css\emoji\goat.png" />
+    <Content Include="Content\assetsfront\css\emoji\goberserk.png" />
+    <Content Include="Content\assetsfront\css\emoji\godmode.png" />
+    <Content Include="Content\assetsfront\css\emoji\golf.png" />
+    <Content Include="Content\assetsfront\css\emoji\grapes.png" />
+    <Content Include="Content\assetsfront\css\emoji\green_apple.png" />
+    <Content Include="Content\assetsfront\css\emoji\green_book.png" />
+    <Content Include="Content\assetsfront\css\emoji\green_heart.png" />
+    <Content Include="Content\assetsfront\css\emoji\grey_exclamation.png" />
+    <Content Include="Content\assetsfront\css\emoji\grey_question.png" />
+    <Content Include="Content\assetsfront\css\emoji\grimacing.png" />
+    <Content Include="Content\assetsfront\css\emoji\grin.png" />
+    <Content Include="Content\assetsfront\css\emoji\grinning.png" />
+    <Content Include="Content\assetsfront\css\emoji\guardsman.png" />
+    <Content Include="Content\assetsfront\css\emoji\guitar.png" />
+    <Content Include="Content\assetsfront\css\emoji\gun.png" />
+    <Content Include="Content\assetsfront\css\emoji\haircut.png" />
+    <Content Include="Content\assetsfront\css\emoji\hamburger.png" />
+    <Content Include="Content\assetsfront\css\emoji\hammer.png" />
+    <Content Include="Content\assetsfront\css\emoji\hamster.png" />
+    <Content Include="Content\assetsfront\css\emoji\hand.png" />
+    <Content Include="Content\assetsfront\css\emoji\handbag.png" />
+    <Content Include="Content\assetsfront\css\emoji\hankey.png" />
+    <Content Include="Content\assetsfront\css\emoji\hash.png" />
+    <Content Include="Content\assetsfront\css\emoji\hatched_chick.png" />
+    <Content Include="Content\assetsfront\css\emoji\hatching_chick.png" />
+    <Content Include="Content\assetsfront\css\emoji\headphones.png" />
+    <Content Include="Content\assetsfront\css\emoji\heart.png" />
+    <Content Include="Content\assetsfront\css\emoji\heartbeat.png" />
+    <Content Include="Content\assetsfront\css\emoji\heartpulse.png" />
+    <Content Include="Content\assetsfront\css\emoji\hearts.png" />
+    <Content Include="Content\assetsfront\css\emoji\heart_decoration.png" />
+    <Content Include="Content\assetsfront\css\emoji\heart_eyes.png" />
+    <Content Include="Content\assetsfront\css\emoji\heart_eyes_cat.png" />
+    <Content Include="Content\assetsfront\css\emoji\hear_no_evil.png" />
+    <Content Include="Content\assetsfront\css\emoji\heavy_check_mark.png" />
+    <Content Include="Content\assetsfront\css\emoji\heavy_division_sign.png" />
+    <Content Include="Content\assetsfront\css\emoji\heavy_dollar_sign.png" />
+    <Content Include="Content\assetsfront\css\emoji\heavy_exclamation_mark.png" />
+    <Content Include="Content\assetsfront\css\emoji\heavy_minus_sign.png" />
+    <Content Include="Content\assetsfront\css\emoji\heavy_multiplication_x.png" />
+    <Content Include="Content\assetsfront\css\emoji\heavy_plus_sign.png" />
+    <Content Include="Content\assetsfront\css\emoji\helicopter.png" />
+    <Content Include="Content\assetsfront\css\emoji\herb.png" />
+    <Content Include="Content\assetsfront\css\emoji\hibiscus.png" />
+    <Content Include="Content\assetsfront\css\emoji\high_brightness.png" />
+    <Content Include="Content\assetsfront\css\emoji\high_heel.png" />
+    <Content Include="Content\assetsfront\css\emoji\hocho.png" />
+    <Content Include="Content\assetsfront\css\emoji\honeybee.png" />
+    <Content Include="Content\assetsfront\css\emoji\honey_pot.png" />
+    <Content Include="Content\assetsfront\css\emoji\horse.png" />
+    <Content Include="Content\assetsfront\css\emoji\horse_racing.png" />
+    <Content Include="Content\assetsfront\css\emoji\hospital.png" />
+    <Content Include="Content\assetsfront\css\emoji\hotel.png" />
+    <Content Include="Content\assetsfront\css\emoji\hotsprings.png" />
+    <Content Include="Content\assetsfront\css\emoji\hourglass.png" />
+    <Content Include="Content\assetsfront\css\emoji\hourglass_flowing_sand.png" />
+    <Content Include="Content\assetsfront\css\emoji\house.png" />
+    <Content Include="Content\assetsfront\css\emoji\house_with_garden.png" />
+    <Content Include="Content\assetsfront\css\emoji\hurtrealbad.png" />
+    <Content Include="Content\assetsfront\css\emoji\hushed.png" />
+    <Content Include="Content\assetsfront\css\emoji\icecream.png" />
+    <Content Include="Content\assetsfront\css\emoji\ice_cream.png" />
+    <Content Include="Content\assetsfront\css\emoji\id.png" />
+    <Content Include="Content\assetsfront\css\emoji\ideograph_advantage.png" />
+    <Content Include="Content\assetsfront\css\emoji\imp.png" />
+    <Content Include="Content\assetsfront\css\emoji\inbox_tray.png" />
+    <Content Include="Content\assetsfront\css\emoji\incoming_envelope.png" />
+    <Content Include="Content\assetsfront\css\emoji\information_desk_person.png" />
+    <Content Include="Content\assetsfront\css\emoji\information_source.png" />
+    <Content Include="Content\assetsfront\css\emoji\innocent.png" />
+    <Content Include="Content\assetsfront\css\emoji\interrobang.png" />
+    <Content Include="Content\assetsfront\css\emoji\iphone.png" />
+    <Content Include="Content\assetsfront\css\emoji\it.png" />
+    <Content Include="Content\assetsfront\css\emoji\izakaya_lantern.png" />
+    <Content Include="Content\assetsfront\css\emoji\jack_o_lantern.png" />
+    <Content Include="Content\assetsfront\css\emoji\japan.png" />
+    <Content Include="Content\assetsfront\css\emoji\japanese_castle.png" />
+    <Content Include="Content\assetsfront\css\emoji\japanese_goblin.png" />
+    <Content Include="Content\assetsfront\css\emoji\japanese_ogre.png" />
+    <Content Include="Content\assetsfront\css\emoji\jeans.png" />
+    <Content Include="Content\assetsfront\css\emoji\joy.png" />
+    <Content Include="Content\assetsfront\css\emoji\joy_cat.png" />
+    <Content Include="Content\assetsfront\css\emoji\jp.png" />
+    <Content Include="Content\assetsfront\css\emoji\key.png" />
+    <Content Include="Content\assetsfront\css\emoji\keycap_ten.png" />
+    <Content Include="Content\assetsfront\css\emoji\kimono.png" />
+    <Content Include="Content\assetsfront\css\emoji\kiss.png" />
+    <Content Include="Content\assetsfront\css\emoji\kissing.png" />
+    <Content Include="Content\assetsfront\css\emoji\kissing_cat.png" />
+    <Content Include="Content\assetsfront\css\emoji\kissing_closed_eyes.png" />
+    <Content Include="Content\assetsfront\css\emoji\kissing_face.png" />
+    <Content Include="Content\assetsfront\css\emoji\kissing_heart.png" />
+    <Content Include="Content\assetsfront\css\emoji\kissing_smiling_eyes.png" />
+    <Content Include="Content\assetsfront\css\emoji\koala.png" />
+    <Content Include="Content\assetsfront\css\emoji\koko.png" />
+    <Content Include="Content\assetsfront\css\emoji\kr.png" />
+    <Content Include="Content\assetsfront\css\emoji\large_blue_circle.png" />
+    <Content Include="Content\assetsfront\css\emoji\large_blue_diamond.png" />
+    <Content Include="Content\assetsfront\css\emoji\large_orange_diamond.png" />
+    <Content Include="Content\assetsfront\css\emoji\last_quarter_moon.png" />
+    <Content Include="Content\assetsfront\css\emoji\last_quarter_moon_with_face.png" />
+    <Content Include="Content\assetsfront\css\emoji\laughing.png" />
+    <Content Include="Content\assetsfront\css\emoji\leaves.png" />
+    <Content Include="Content\assetsfront\css\emoji\ledger.png" />
+    <Content Include="Content\assetsfront\css\emoji\leftwards_arrow_with_hook.png" />
+    <Content Include="Content\assetsfront\css\emoji\left_luggage.png" />
+    <Content Include="Content\assetsfront\css\emoji\left_right_arrow.png" />
+    <Content Include="Content\assetsfront\css\emoji\lemon.png" />
+    <Content Include="Content\assetsfront\css\emoji\leo.png" />
+    <Content Include="Content\assetsfront\css\emoji\leopard.png" />
+    <Content Include="Content\assetsfront\css\emoji\libra.png" />
+    <Content Include="Content\assetsfront\css\emoji\light_rail.png" />
+    <Content Include="Content\assetsfront\css\emoji\link.png" />
+    <Content Include="Content\assetsfront\css\emoji\lips.png" />
+    <Content Include="Content\assetsfront\css\emoji\lipstick.png" />
+    <Content Include="Content\assetsfront\css\emoji\lock.png" />
+    <Content Include="Content\assetsfront\css\emoji\lock_with_ink_pen.png" />
+    <Content Include="Content\assetsfront\css\emoji\lollipop.png" />
+    <Content Include="Content\assetsfront\css\emoji\loop.png" />
+    <Content Include="Content\assetsfront\css\emoji\loudspeaker.png" />
+    <Content Include="Content\assetsfront\css\emoji\love_hotel.png" />
+    <Content Include="Content\assetsfront\css\emoji\love_letter.png" />
+    <Content Include="Content\assetsfront\css\emoji\low_brightness.png" />
+    <Content Include="Content\assetsfront\css\emoji\m.png" />
+    <Content Include="Content\assetsfront\css\emoji\mag.png" />
+    <Content Include="Content\assetsfront\css\emoji\mag_right.png" />
+    <Content Include="Content\assetsfront\css\emoji\mahjong.png" />
+    <Content Include="Content\assetsfront\css\emoji\mailbox.png" />
+    <Content Include="Content\assetsfront\css\emoji\mailbox_closed.png" />
+    <Content Include="Content\assetsfront\css\emoji\mailbox_with_mail.png" />
+    <Content Include="Content\assetsfront\css\emoji\mailbox_with_no_mail.png" />
+    <Content Include="Content\assetsfront\css\emoji\man.png" />
+    <Content Include="Content\assetsfront\css\emoji\mans_shoe.png" />
+    <Content Include="Content\assetsfront\css\emoji\man_with_gua_pi_mao.png" />
+    <Content Include="Content\assetsfront\css\emoji\man_with_turban.png" />
+    <Content Include="Content\assetsfront\css\emoji\maple_leaf.png" />
+    <Content Include="Content\assetsfront\css\emoji\mask.png" />
+    <Content Include="Content\assetsfront\css\emoji\massage.png" />
+    <Content Include="Content\assetsfront\css\emoji\meat_on_bone.png" />
+    <Content Include="Content\assetsfront\css\emoji\mega.png" />
+    <Content Include="Content\assetsfront\css\emoji\melon.png" />
+    <Content Include="Content\assetsfront\css\emoji\memo.png" />
+    <Content Include="Content\assetsfront\css\emoji\mens.png" />
+    <Content Include="Content\assetsfront\css\emoji\metal.png" />
+    <Content Include="Content\assetsfront\css\emoji\metro.png" />
+    <Content Include="Content\assetsfront\css\emoji\microphone.png" />
+    <Content Include="Content\assetsfront\css\emoji\microscope.png" />
+    <Content Include="Content\assetsfront\css\emoji\milky_way.png" />
+    <Content Include="Content\assetsfront\css\emoji\minibus.png" />
+    <Content Include="Content\assetsfront\css\emoji\minidisc.png" />
+    <Content Include="Content\assetsfront\css\emoji\mobile_phone_off.png" />
+    <Content Include="Content\assetsfront\css\emoji\moneybag.png" />
+    <Content Include="Content\assetsfront\css\emoji\money_with_wings.png" />
+    <Content Include="Content\assetsfront\css\emoji\monkey.png" />
+    <Content Include="Content\assetsfront\css\emoji\monkey_face.png" />
+    <Content Include="Content\assetsfront\css\emoji\monorail.png" />
+    <Content Include="Content\assetsfront\css\emoji\moon.png" />
+    <Content Include="Content\assetsfront\css\emoji\mortar_board.png" />
+    <Content Include="Content\assetsfront\css\emoji\mountain_bicyclist.png" />
+    <Content Include="Content\assetsfront\css\emoji\mountain_cableway.png" />
+    <Content Include="Content\assetsfront\css\emoji\mountain_railway.png" />
+    <Content Include="Content\assetsfront\css\emoji\mount_fuji.png" />
+    <Content Include="Content\assetsfront\css\emoji\mouse.png" />
+    <Content Include="Content\assetsfront\css\emoji\mouse2.png" />
+    <Content Include="Content\assetsfront\css\emoji\movie_camera.png" />
+    <Content Include="Content\assetsfront\css\emoji\moyai.png" />
+    <Content Include="Content\assetsfront\css\emoji\muscle.png" />
+    <Content Include="Content\assetsfront\css\emoji\mushroom.png" />
+    <Content Include="Content\assetsfront\css\emoji\musical_keyboard.png" />
+    <Content Include="Content\assetsfront\css\emoji\musical_note.png" />
+    <Content Include="Content\assetsfront\css\emoji\musical_score.png" />
+    <Content Include="Content\assetsfront\css\emoji\mute.png" />
+    <Content Include="Content\assetsfront\css\emoji\nail_care.png" />
+    <Content Include="Content\assetsfront\css\emoji\name_badge.png" />
+    <Content Include="Content\assetsfront\css\emoji\neckbeard.png" />
+    <Content Include="Content\assetsfront\css\emoji\necktie.png" />
+    <Content Include="Content\assetsfront\css\emoji\negative_squared_cross_mark.png" />
+    <Content Include="Content\assetsfront\css\emoji\neutral_face.png" />
+    <Content Include="Content\assetsfront\css\emoji\new.png" />
+    <Content Include="Content\assetsfront\css\emoji\newspaper.png" />
+    <Content Include="Content\assetsfront\css\emoji\new_moon.png" />
+    <Content Include="Content\assetsfront\css\emoji\new_moon_with_face.png" />
+    <Content Include="Content\assetsfront\css\emoji\ng.png" />
+    <Content Include="Content\assetsfront\css\emoji\nine.png" />
+    <Content Include="Content\assetsfront\css\emoji\non-potable_water.png" />
+    <Content Include="Content\assetsfront\css\emoji\nose.png" />
+    <Content Include="Content\assetsfront\css\emoji\notebook.png" />
+    <Content Include="Content\assetsfront\css\emoji\notebook_with_decorative_cover.png" />
+    <Content Include="Content\assetsfront\css\emoji\notes.png" />
+    <Content Include="Content\assetsfront\css\emoji\no_bell.png" />
+    <Content Include="Content\assetsfront\css\emoji\no_bicycles.png" />
+    <Content Include="Content\assetsfront\css\emoji\no_entry.png" />
+    <Content Include="Content\assetsfront\css\emoji\no_entry_sign.png" />
+    <Content Include="Content\assetsfront\css\emoji\no_good.png" />
+    <Content Include="Content\assetsfront\css\emoji\no_mobile_phones.png" />
+    <Content Include="Content\assetsfront\css\emoji\no_mouth.png" />
+    <Content Include="Content\assetsfront\css\emoji\no_pedestrians.png" />
+    <Content Include="Content\assetsfront\css\emoji\no_smoking.png" />
+    <Content Include="Content\assetsfront\css\emoji\nut_and_bolt.png" />
+    <Content Include="Content\assetsfront\css\emoji\o.png" />
+    <Content Include="Content\assetsfront\css\emoji\o2.png" />
+    <Content Include="Content\assetsfront\css\emoji\ocean.png" />
+    <Content Include="Content\assetsfront\css\emoji\octocat.png" />
+    <Content Include="Content\assetsfront\css\emoji\octopus.png" />
+    <Content Include="Content\assetsfront\css\emoji\oden.png" />
+    <Content Include="Content\assetsfront\css\emoji\office.png" />
+    <Content Include="Content\assetsfront\css\emoji\ok.png" />
+    <Content Include="Content\assetsfront\css\emoji\ok_hand.png" />
+    <Content Include="Content\assetsfront\css\emoji\ok_woman.png" />
+    <Content Include="Content\assetsfront\css\emoji\older_man.png" />
+    <Content Include="Content\assetsfront\css\emoji\older_woman.png" />
+    <Content Include="Content\assetsfront\css\emoji\on.png" />
+    <Content Include="Content\assetsfront\css\emoji\oncoming_automobile.png" />
+    <Content Include="Content\assetsfront\css\emoji\oncoming_bus.png" />
+    <Content Include="Content\assetsfront\css\emoji\oncoming_police_car.png" />
+    <Content Include="Content\assetsfront\css\emoji\oncoming_taxi.png" />
+    <Content Include="Content\assetsfront\css\emoji\one.png" />
+    <Content Include="Content\assetsfront\css\emoji\open_file_folder.png" />
+    <Content Include="Content\assetsfront\css\emoji\open_hands.png" />
+    <Content Include="Content\assetsfront\css\emoji\open_mouth.png" />
+    <Content Include="Content\assetsfront\css\emoji\ophiuchus.png" />
+    <Content Include="Content\assetsfront\css\emoji\orange_book.png" />
+    <Content Include="Content\assetsfront\css\emoji\outbox_tray.png" />
+    <Content Include="Content\assetsfront\css\emoji\ox.png" />
+    <Content Include="Content\assetsfront\css\emoji\package.png" />
+    <Content Include="Content\assetsfront\css\emoji\pager.png" />
+    <Content Include="Content\assetsfront\css\emoji\page_facing_up.png" />
+    <Content Include="Content\assetsfront\css\emoji\page_with_curl.png" />
+    <Content Include="Content\assetsfront\css\emoji\palm_tree.png" />
+    <Content Include="Content\assetsfront\css\emoji\panda_face.png" />
+    <Content Include="Content\assetsfront\css\emoji\paperclip.png" />
+    <Content Include="Content\assetsfront\css\emoji\parking.png" />
+    <Content Include="Content\assetsfront\css\emoji\partly_sunny.png" />
+    <Content Include="Content\assetsfront\css\emoji\part_alternation_mark.png" />
+    <Content Include="Content\assetsfront\css\emoji\passport_control.png" />
+    <Content Include="Content\assetsfront\css\emoji\paw_prints.png" />
+    <Content Include="Content\assetsfront\css\emoji\peach.png" />
+    <Content Include="Content\assetsfront\css\emoji\pear.png" />
+    <Content Include="Content\assetsfront\css\emoji\pencil.png" />
+    <Content Include="Content\assetsfront\css\emoji\pencil2.png" />
+    <Content Include="Content\assetsfront\css\emoji\penguin.png" />
+    <Content Include="Content\assetsfront\css\emoji\pensive.png" />
+    <Content Include="Content\assetsfront\css\emoji\performing_arts.png" />
+    <Content Include="Content\assetsfront\css\emoji\persevere.png" />
+    <Content Include="Content\assetsfront\css\emoji\person_frowning.png" />
+    <Content Include="Content\assetsfront\css\emoji\person_with_blond_hair.png" />
+    <Content Include="Content\assetsfront\css\emoji\person_with_pouting_face.png" />
+    <Content Include="Content\assetsfront\css\emoji\phone.png" />
+    <Content Include="Content\assetsfront\css\emoji\pig.png" />
+    <Content Include="Content\assetsfront\css\emoji\pig2.png" />
+    <Content Include="Content\assetsfront\css\emoji\pig_nose.png" />
+    <Content Include="Content\assetsfront\css\emoji\pill.png" />
+    <Content Include="Content\assetsfront\css\emoji\pineapple.png" />
+    <Content Include="Content\assetsfront\css\emoji\pisces.png" />
+    <Content Include="Content\assetsfront\css\emoji\pizza.png" />
+    <Content Include="Content\assetsfront\css\emoji\plus1.png" />
+    <Content Include="Content\assetsfront\css\emoji\point_down.png" />
+    <Content Include="Content\assetsfront\css\emoji\point_left.png" />
+    <Content Include="Content\assetsfront\css\emoji\point_right.png" />
+    <Content Include="Content\assetsfront\css\emoji\point_up.png" />
+    <Content Include="Content\assetsfront\css\emoji\point_up_2.png" />
+    <Content Include="Content\assetsfront\css\emoji\police_car.png" />
+    <Content Include="Content\assetsfront\css\emoji\poodle.png" />
+    <Content Include="Content\assetsfront\css\emoji\poop.png" />
+    <Content Include="Content\assetsfront\css\emoji\postal_horn.png" />
+    <Content Include="Content\assetsfront\css\emoji\postbox.png" />
+    <Content Include="Content\assetsfront\css\emoji\post_office.png" />
+    <Content Include="Content\assetsfront\css\emoji\potable_water.png" />
+    <Content Include="Content\assetsfront\css\emoji\pouch.png" />
+    <Content Include="Content\assetsfront\css\emoji\poultry_leg.png" />
+    <Content Include="Content\assetsfront\css\emoji\pound.png" />
+    <Content Include="Content\assetsfront\css\emoji\pouting_cat.png" />
+    <Content Include="Content\assetsfront\css\emoji\pray.png" />
+    <Content Include="Content\assetsfront\css\emoji\princess.png" />
+    <Content Include="Content\assetsfront\css\emoji\punch.png" />
+    <Content Include="Content\assetsfront\css\emoji\purple_heart.png" />
+    <Content Include="Content\assetsfront\css\emoji\purse.png" />
+    <Content Include="Content\assetsfront\css\emoji\pushpin.png" />
+    <Content Include="Content\assetsfront\css\emoji\put_litter_in_its_place.png" />
+    <Content Include="Content\assetsfront\css\emoji\question.png" />
+    <Content Include="Content\assetsfront\css\emoji\rabbit.png" />
+    <Content Include="Content\assetsfront\css\emoji\rabbit2.png" />
+    <Content Include="Content\assetsfront\css\emoji\racehorse.png" />
+    <Content Include="Content\assetsfront\css\emoji\radio.png" />
+    <Content Include="Content\assetsfront\css\emoji\radio_button.png" />
+    <Content Include="Content\assetsfront\css\emoji\rage.png" />
+    <Content Include="Content\assetsfront\css\emoji\rage1.png" />
+    <Content Include="Content\assetsfront\css\emoji\rage2.png" />
+    <Content Include="Content\assetsfront\css\emoji\rage3.png" />
+    <Content Include="Content\assetsfront\css\emoji\rage4.png" />
+    <Content Include="Content\assetsfront\css\emoji\railway_car.png" />
+    <Content Include="Content\assetsfront\css\emoji\rainbow.png" />
+    <Content Include="Content\assetsfront\css\emoji\raised_hand.png" />
+    <Content Include="Content\assetsfront\css\emoji\raised_hands.png" />
+    <Content Include="Content\assetsfront\css\emoji\raising_hand.png" />
+    <Content Include="Content\assetsfront\css\emoji\ram.png" />
+    <Content Include="Content\assetsfront\css\emoji\ramen.png" />
+    <Content Include="Content\assetsfront\css\emoji\rat.png" />
+    <Content Include="Content\assetsfront\css\emoji\recycle.png" />
+    <Content Include="Content\assetsfront\css\emoji\red_car.png" />
+    <Content Include="Content\assetsfront\css\emoji\red_circle.png" />
+    <Content Include="Content\assetsfront\css\emoji\registered.png" />
+    <Content Include="Content\assetsfront\css\emoji\relaxed.png" />
+    <Content Include="Content\assetsfront\css\emoji\relieved.png" />
+    <Content Include="Content\assetsfront\css\emoji\repeat.png" />
+    <Content Include="Content\assetsfront\css\emoji\repeat_one.png" />
+    <Content Include="Content\assetsfront\css\emoji\restroom.png" />
+    <Content Include="Content\assetsfront\css\emoji\revolving_hearts.png" />
+    <Content Include="Content\assetsfront\css\emoji\rewind.png" />
+    <Content Include="Content\assetsfront\css\emoji\ribbon.png" />
+    <Content Include="Content\assetsfront\css\emoji\rice.png" />
+    <Content Include="Content\assetsfront\css\emoji\rice_ball.png" />
+    <Content Include="Content\assetsfront\css\emoji\rice_cracker.png" />
+    <Content Include="Content\assetsfront\css\emoji\rice_scene.png" />
+    <Content Include="Content\assetsfront\css\emoji\ring.png" />
+    <Content Include="Content\assetsfront\css\emoji\rocket.png" />
+    <Content Include="Content\assetsfront\css\emoji\roller_coaster.png" />
+    <Content Include="Content\assetsfront\css\emoji\rooster.png" />
+    <Content Include="Content\assetsfront\css\emoji\rose.png" />
+    <Content Include="Content\assetsfront\css\emoji\rotating_light.png" />
+    <Content Include="Content\assetsfront\css\emoji\round_pushpin.png" />
+    <Content Include="Content\assetsfront\css\emoji\rowboat.png" />
+    <Content Include="Content\assetsfront\css\emoji\ru.png" />
+    <Content Include="Content\assetsfront\css\emoji\rugby_football.png" />
+    <Content Include="Content\assetsfront\css\emoji\runner.png" />
+    <Content Include="Content\assetsfront\css\emoji\running.png" />
+    <Content Include="Content\assetsfront\css\emoji\running_shirt_with_sash.png" />
+    <Content Include="Content\assetsfront\css\emoji\sa.png" />
+    <Content Include="Content\assetsfront\css\emoji\sagittarius.png" />
+    <Content Include="Content\assetsfront\css\emoji\sailboat.png" />
+    <Content Include="Content\assetsfront\css\emoji\sake.png" />
+    <Content Include="Content\assetsfront\css\emoji\sandal.png" />
+    <Content Include="Content\assetsfront\css\emoji\santa.png" />
+    <Content Include="Content\assetsfront\css\emoji\satellite.png" />
+    <Content Include="Content\assetsfront\css\emoji\satisfied.png" />
+    <Content Include="Content\assetsfront\css\emoji\saxophone.png" />
+    <Content Include="Content\assetsfront\css\emoji\school.png" />
+    <Content Include="Content\assetsfront\css\emoji\school_satchel.png" />
+    <Content Include="Content\assetsfront\css\emoji\scissors.png" />
+    <Content Include="Content\assetsfront\css\emoji\scorpius.png" />
+    <Content Include="Content\assetsfront\css\emoji\scream.png" />
+    <Content Include="Content\assetsfront\css\emoji\scream_cat.png" />
+    <Content Include="Content\assetsfront\css\emoji\scroll.png" />
+    <Content Include="Content\assetsfront\css\emoji\seat.png" />
+    <Content Include="Content\assetsfront\css\emoji\secret.png" />
+    <Content Include="Content\assetsfront\css\emoji\seedling.png" />
+    <Content Include="Content\assetsfront\css\emoji\see_no_evil.png" />
+    <Content Include="Content\assetsfront\css\emoji\seven.png" />
+    <Content Include="Content\assetsfront\css\emoji\shaved_ice.png" />
+    <Content Include="Content\assetsfront\css\emoji\sheep.png" />
+    <Content Include="Content\assetsfront\css\emoji\shell.png" />
+    <Content Include="Content\assetsfront\css\emoji\ship.png" />
+    <Content Include="Content\assetsfront\css\emoji\shipit.png" />
+    <Content Include="Content\assetsfront\css\emoji\shirt.png" />
+    <Content Include="Content\assetsfront\css\emoji\shit.png" />
+    <Content Include="Content\assetsfront\css\emoji\shoe.png" />
+    <Content Include="Content\assetsfront\css\emoji\shower.png" />
+    <Content Include="Content\assetsfront\css\emoji\signal_strength.png" />
+    <Content Include="Content\assetsfront\css\emoji\six.png" />
+    <Content Include="Content\assetsfront\css\emoji\six_pointed_star.png" />
+    <Content Include="Content\assetsfront\css\emoji\ski.png" />
+    <Content Include="Content\assetsfront\css\emoji\skull.png" />
+    <Content Include="Content\assetsfront\css\emoji\sleeping.png" />
+    <Content Include="Content\assetsfront\css\emoji\sleepy.png" />
+    <Content Include="Content\assetsfront\css\emoji\slot_machine.png" />
+    <Content Include="Content\assetsfront\css\emoji\small_blue_diamond.png" />
+    <Content Include="Content\assetsfront\css\emoji\small_orange_diamond.png" />
+    <Content Include="Content\assetsfront\css\emoji\small_red_triangle.png" />
+    <Content Include="Content\assetsfront\css\emoji\small_red_triangle_down.png" />
+    <Content Include="Content\assetsfront\css\emoji\smile.png" />
+    <Content Include="Content\assetsfront\css\emoji\smiley.png" />
+    <Content Include="Content\assetsfront\css\emoji\smiley_cat.png" />
+    <Content Include="Content\assetsfront\css\emoji\smile_cat.png" />
+    <Content Include="Content\assetsfront\css\emoji\smiling_imp.png" />
+    <Content Include="Content\assetsfront\css\emoji\smirk.png" />
+    <Content Include="Content\assetsfront\css\emoji\smirk_cat.png" />
+    <Content Include="Content\assetsfront\css\emoji\smoking.png" />
+    <Content Include="Content\assetsfront\css\emoji\snail.png" />
+    <Content Include="Content\assetsfront\css\emoji\snake.png" />
+    <Content Include="Content\assetsfront\css\emoji\snowboarder.png" />
+    <Content Include="Content\assetsfront\css\emoji\snowflake.png" />
+    <Content Include="Content\assetsfront\css\emoji\snowman.png" />
+    <Content Include="Content\assetsfront\css\emoji\sob.png" />
+    <Content Include="Content\assetsfront\css\emoji\soccer.png" />
+    <Content Include="Content\assetsfront\css\emoji\soon.png" />
+    <Content Include="Content\assetsfront\css\emoji\sos.png" />
+    <Content Include="Content\assetsfront\css\emoji\sound.png" />
+    <Content Include="Content\assetsfront\css\emoji\space_invader.png" />
+    <Content Include="Content\assetsfront\css\emoji\spades.png" />
+    <Content Include="Content\assetsfront\css\emoji\spaghetti.png" />
+    <Content Include="Content\assetsfront\css\emoji\sparkle.png" />
+    <Content Include="Content\assetsfront\css\emoji\sparkler.png" />
+    <Content Include="Content\assetsfront\css\emoji\sparkles.png" />
+    <Content Include="Content\assetsfront\css\emoji\sparkling_heart.png" />
+    <Content Include="Content\assetsfront\css\emoji\speaker.png" />
+    <Content Include="Content\assetsfront\css\emoji\speak_no_evil.png" />
+    <Content Include="Content\assetsfront\css\emoji\speech_balloon.png" />
+    <Content Include="Content\assetsfront\css\emoji\speedboat.png" />
+    <Content Include="Content\assetsfront\css\emoji\squirrel.png" />
+    <Content Include="Content\assetsfront\css\emoji\star.png" />
+    <Content Include="Content\assetsfront\css\emoji\star2.png" />
+    <Content Include="Content\assetsfront\css\emoji\stars.png" />
+    <Content Include="Content\assetsfront\css\emoji\station.png" />
+    <Content Include="Content\assetsfront\css\emoji\statue_of_liberty.png" />
+    <Content Include="Content\assetsfront\css\emoji\steam_locomotive.png" />
+    <Content Include="Content\assetsfront\css\emoji\stew.png" />
+    <Content Include="Content\assetsfront\css\emoji\straight_ruler.png" />
+    <Content Include="Content\assetsfront\css\emoji\strawberry.png" />
+    <Content Include="Content\assetsfront\css\emoji\stuck_out_tongue.png" />
+    <Content Include="Content\assetsfront\css\emoji\stuck_out_tongue_closed_eyes.png" />
+    <Content Include="Content\assetsfront\css\emoji\stuck_out_tongue_winking_eye.png" />
+    <Content Include="Content\assetsfront\css\emoji\sunflower.png" />
+    <Content Include="Content\assetsfront\css\emoji\sunglasses.png" />
+    <Content Include="Content\assetsfront\css\emoji\sunny.png" />
+    <Content Include="Content\assetsfront\css\emoji\sunrise.png" />
+    <Content Include="Content\assetsfront\css\emoji\sunrise_over_mountains.png" />
+    <Content Include="Content\assetsfront\css\emoji\sun_with_face.png" />
+    <Content Include="Content\assetsfront\css\emoji\surfer.png" />
+    <Content Include="Content\assetsfront\css\emoji\sushi.png" />
+    <Content Include="Content\assetsfront\css\emoji\suspect.png" />
+    <Content Include="Content\assetsfront\css\emoji\suspension_railway.png" />
+    <Content Include="Content\assetsfront\css\emoji\sweat.png" />
+    <Content Include="Content\assetsfront\css\emoji\sweat_drops.png" />
+    <Content Include="Content\assetsfront\css\emoji\sweat_smile.png" />
+    <Content Include="Content\assetsfront\css\emoji\sweet_potato.png" />
+    <Content Include="Content\assetsfront\css\emoji\swimmer.png" />
+    <Content Include="Content\assetsfront\css\emoji\symbols.png" />
+    <Content Include="Content\assetsfront\css\emoji\syringe.png" />
+    <Content Include="Content\assetsfront\css\emoji\tada.png" />
+    <Content Include="Content\assetsfront\css\emoji\tanabata_tree.png" />
+    <Content Include="Content\assetsfront\css\emoji\tangerine.png" />
+    <Content Include="Content\assetsfront\css\emoji\taurus.png" />
+    <Content Include="Content\assetsfront\css\emoji\taxi.png" />
+    <Content Include="Content\assetsfront\css\emoji\tea.png" />
+    <Content Include="Content\assetsfront\css\emoji\telephone.png" />
+    <Content Include="Content\assetsfront\css\emoji\telephone_receiver.png" />
+    <Content Include="Content\assetsfront\css\emoji\telescope.png" />
+    <Content Include="Content\assetsfront\css\emoji\tennis.png" />
+    <Content Include="Content\assetsfront\css\emoji\tent.png" />
+    <Content Include="Content\assetsfront\css\emoji\thought_balloon.png" />
+    <Content Include="Content\assetsfront\css\emoji\three.png" />
+    <Content Include="Content\assetsfront\css\emoji\thumbsdown.png" />
+    <Content Include="Content\assetsfront\css\emoji\thumbsup.png" />
+    <Content Include="Content\assetsfront\css\emoji\ticket.png" />
+    <Content Include="Content\assetsfront\css\emoji\tiger.png" />
+    <Content Include="Content\assetsfront\css\emoji\tiger2.png" />
+    <Content Include="Content\assetsfront\css\emoji\tired_face.png" />
+    <Content Include="Content\assetsfront\css\emoji\tm.png" />
+    <Content Include="Content\assetsfront\css\emoji\toilet.png" />
+    <Content Include="Content\assetsfront\css\emoji\tokyo_tower.png" />
+    <Content Include="Content\assetsfront\css\emoji\tomato.png" />
+    <Content Include="Content\assetsfront\css\emoji\tongue.png" />
+    <Content Include="Content\assetsfront\css\emoji\top.png" />
+    <Content Include="Content\assetsfront\css\emoji\tophat.png" />
+    <Content Include="Content\assetsfront\css\emoji\tractor.png" />
+    <Content Include="Content\assetsfront\css\emoji\traffic_light.png" />
+    <Content Include="Content\assetsfront\css\emoji\train.png" />
+    <Content Include="Content\assetsfront\css\emoji\train2.png" />
+    <Content Include="Content\assetsfront\css\emoji\tram.png" />
+    <Content Include="Content\assetsfront\css\emoji\triangular_flag_on_post.png" />
+    <Content Include="Content\assetsfront\css\emoji\triangular_ruler.png" />
+    <Content Include="Content\assetsfront\css\emoji\trident.png" />
+    <Content Include="Content\assetsfront\css\emoji\triumph.png" />
+    <Content Include="Content\assetsfront\css\emoji\trolleybus.png" />
+    <Content Include="Content\assetsfront\css\emoji\trollface.png" />
+    <Content Include="Content\assetsfront\css\emoji\trophy.png" />
+    <Content Include="Content\assetsfront\css\emoji\tropical_drink.png" />
+    <Content Include="Content\assetsfront\css\emoji\tropical_fish.png" />
+    <Content Include="Content\assetsfront\css\emoji\truck.png" />
+    <Content Include="Content\assetsfront\css\emoji\trumpet.png" />
+    <Content Include="Content\assetsfront\css\emoji\tshirt.png" />
+    <Content Include="Content\assetsfront\css\emoji\tulip.png" />
+    <Content Include="Content\assetsfront\css\emoji\turtle.png" />
+    <Content Include="Content\assetsfront\css\emoji\tv.png" />
+    <Content Include="Content\assetsfront\css\emoji\twisted_rightwards_arrows.png" />
+    <Content Include="Content\assetsfront\css\emoji\two.png" />
+    <Content Include="Content\assetsfront\css\emoji\two_hearts.png" />
+    <Content Include="Content\assetsfront\css\emoji\two_men_holding_hands.png" />
+    <Content Include="Content\assetsfront\css\emoji\two_women_holding_hands.png" />
+    <Content Include="Content\assetsfront\css\emoji\u5272.png" />
+    <Content Include="Content\assetsfront\css\emoji\u5408.png" />
+    <Content Include="Content\assetsfront\css\emoji\u55b6.png" />
+    <Content Include="Content\assetsfront\css\emoji\u6307.png" />
+    <Content Include="Content\assetsfront\css\emoji\u6708.png" />
+    <Content Include="Content\assetsfront\css\emoji\u6709.png" />
+    <Content Include="Content\assetsfront\css\emoji\u6e80.png" />
+    <Content Include="Content\assetsfront\css\emoji\u7121.png" />
+    <Content Include="Content\assetsfront\css\emoji\u7533.png" />
+    <Content Include="Content\assetsfront\css\emoji\u7981.png" />
+    <Content Include="Content\assetsfront\css\emoji\u7a7a.png" />
+    <Content Include="Content\assetsfront\css\emoji\uk.png" />
+    <Content Include="Content\assetsfront\css\emoji\umbrella.png" />
+    <Content Include="Content\assetsfront\css\emoji\unamused.png" />
+    <Content Include="Content\assetsfront\css\emoji\underage.png" />
+    <Content Include="Content\assetsfront\css\emoji\unlock.png" />
+    <Content Include="Content\assetsfront\css\emoji\up.png" />
+    <Content Include="Content\assetsfront\css\emoji\us.png" />
+    <Content Include="Content\assetsfront\css\emoji\v.png" />
+    <Content Include="Content\assetsfront\css\emoji\vertical_traffic_light.png" />
+    <Content Include="Content\assetsfront\css\emoji\vhs.png" />
+    <Content Include="Content\assetsfront\css\emoji\vibration_mode.png" />
+    <Content Include="Content\assetsfront\css\emoji\video_camera.png" />
+    <Content Include="Content\assetsfront\css\emoji\video_game.png" />
+    <Content Include="Content\assetsfront\css\emoji\violin.png" />
+    <Content Include="Content\assetsfront\css\emoji\virgo.png" />
+    <Content Include="Content\assetsfront\css\emoji\volcano.png" />
+    <Content Include="Content\assetsfront\css\emoji\vs.png" />
+    <Content Include="Content\assetsfront\css\emoji\walking.png" />
+    <Content Include="Content\assetsfront\css\emoji\waning_crescent_moon.png" />
+    <Content Include="Content\assetsfront\css\emoji\waning_gibbous_moon.png" />
+    <Content Include="Content\assetsfront\css\emoji\warning.png" />
+    <Content Include="Content\assetsfront\css\emoji\watch.png" />
+    <Content Include="Content\assetsfront\css\emoji\watermelon.png" />
+    <Content Include="Content\assetsfront\css\emoji\water_buffalo.png" />
+    <Content Include="Content\assetsfront\css\emoji\wave.png" />
+    <Content Include="Content\assetsfront\css\emoji\wavy_dash.png" />
+    <Content Include="Content\assetsfront\css\emoji\waxing_crescent_moon.png" />
+    <Content Include="Content\assetsfront\css\emoji\waxing_gibbous_moon.png" />
+    <Content Include="Content\assetsfront\css\emoji\wc.png" />
+    <Content Include="Content\assetsfront\css\emoji\weary.png" />
+    <Content Include="Content\assetsfront\css\emoji\wedding.png" />
+    <Content Include="Content\assetsfront\css\emoji\whale.png" />
+    <Content Include="Content\assetsfront\css\emoji\whale2.png" />
+    <Content Include="Content\assetsfront\css\emoji\wheelchair.png" />
+    <Content Include="Content\assetsfront\css\emoji\white_check_mark.png" />
+    <Content Include="Content\assetsfront\css\emoji\white_circle.png" />
+    <Content Include="Content\assetsfront\css\emoji\white_flower.png" />
+    <Content Include="Content\assetsfront\css\emoji\white_large_square.png" />
+    <Content Include="Content\assetsfront\css\emoji\white_medium_small_square.png" />
+    <Content Include="Content\assetsfront\css\emoji\white_medium_square.png" />
+    <Content Include="Content\assetsfront\css\emoji\white_small_square.png" />
+    <Content Include="Content\assetsfront\css\emoji\white_square_button.png" />
+    <Content Include="Content\assetsfront\css\emoji\wind_chime.png" />
+    <Content Include="Content\assetsfront\css\emoji\wine_glass.png" />
+    <Content Include="Content\assetsfront\css\emoji\wink.png" />
+    <Content Include="Content\assetsfront\css\emoji\wolf.png" />
+    <Content Include="Content\assetsfront\css\emoji\woman.png" />
+    <Content Include="Content\assetsfront\css\emoji\womans_clothes.png" />
+    <Content Include="Content\assetsfront\css\emoji\womans_hat.png" />
+    <Content Include="Content\assetsfront\css\emoji\womens.png" />
+    <Content Include="Content\assetsfront\css\emoji\worried.png" />
+    <Content Include="Content\assetsfront\css\emoji\wrench.png" />
+    <Content Include="Content\assetsfront\css\emoji\x.png" />
+    <Content Include="Content\assetsfront\css\emoji\yellow_heart.png" />
+    <Content Include="Content\assetsfront\css\emoji\yen.png" />
+    <Content Include="Content\assetsfront\css\emoji\yum.png" />
+    <Content Include="Content\assetsfront\css\emoji\zap.png" />
+    <Content Include="Content\assetsfront\css\emoji\zero.png" />
+    <Content Include="Content\assetsfront\css\emoji\zzz.png" />
+    <Content Include="Content\assetsfront\css\font-awesome.min.css" />
+    <Content Include="Content\assetsfront\css\ionicons.min.css" />
+    <Content Include="Content\assetsfront\css\jquery.scrollbar.css" />
+    <Content Include="Content\assetsfront\css\style.css" />
+    <Content Include="Content\assetsfront\fonts\fontawesome-webfont3e6e.svg" />
+    <Content Include="Content\assetsfront\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\assetsfront\fonts\ionicons28b5.svg" />
+    <Content Include="Content\assetsfront\images\404.png" />
+    <Content Include="Content\assetsfront\images\album\1.jpg" />
+    <Content Include="Content\assetsfront\images\album\2.jpg" />
+    <Content Include="Content\assetsfront\images\album\3.jpg" />
+    <Content Include="Content\assetsfront\images\album\4.jpg" />
+    <Content Include="Content\assetsfront\images\album\5.jpg" />
+    <Content Include="Content\assetsfront\images\album\6.jpg" />
+    <Content Include="Content\assetsfront\images\album\7.jpg" />
+    <Content Include="Content\assetsfront\images\album\8.jpg" />
+    <Content Include="Content\assetsfront\images\album\9.jpg" />
+    <Content Include="Content\assetsfront\images\app-store.png" />
+    <Content Include="Content\assetsfront\images\bg\bg-1.jpg" />
+    <Content Include="Content\assetsfront\images\bg\bg-2.jpg" />
+    <Content Include="Content\assetsfront\images\bg\bg-3.jpg" />
+    <Content Include="Content\assetsfront\images\bg\bg-4.jpg" />
+    <Content Include="Content\assetsfront\images\bg\bg-5.jpg" />
+    <Content Include="Content\assetsfront\images\blur.png" />
+    <Content Include="Content\assetsfront\images\bottom-shadow.png" />
+    <Content Include="Content\assetsfront\images\bullet.png" />
+    <Content Include="Content\assetsfront\images\covers\1.jpg" />
+    <Content Include="Content\assetsfront\images\covers\10.jpg" />
+    <Content Include="Content\assetsfront\images\covers\3.jpg" />
+    <Content Include="Content\assetsfront\images\covers\4.jpg" />
+    <Content Include="Content\assetsfront\images\covers\5.jpg" />
+    <Content Include="Content\assetsfront\images\covers\6.jpg" />
+    <Content Include="Content\assetsfront\images\covers\7.jpg" />
+    <Content Include="Content\assetsfront\images\covers\8.jpg" />
+    <Content Include="Content\assetsfront\images\covers\9.jpg" />
+    <Content Include="Content\assetsfront\images\down-arrow.png" />
+    <Content Include="Content\assetsfront\images\envato.png" />
+    <Content Include="Content\assetsfront\images\envato_logo.png" />
+    <Content Include="Content\assetsfront\images\face-map.png" />
+    <Content Include="Content\assetsfront\images\fav.png" />
+    <Content Include="Content\assetsfront\images\google-play.png" />
+    <Content Include="Content\assetsfront\images\iPhone.png" />
+    <Content Include="Content\assetsfront\images\logo-black.png" />
+    <Content Include="Content\assetsfront\images\logo.png" />
+    <Content Include="Content\assetsfront\images\post-images\1.jpg" />
+    <Content Include="Content\assetsfront\images\post-images\11.jpg" />
+    <Content Include="Content\assetsfront\images\post-images\12.jpg" />
+    <Content Include="Content\assetsfront\images\post-images\13.jpg" />
+    <Content Include="Content\assetsfront\images\post-images\2.jpg" />
+    <Content Include="Content\assetsfront\images\post-images\3.jpg" />
+    <Content Include="Content\assetsfront\images\post-images\4.jpg" />
+    <Content Include="Content\assetsfront\images\post-images\5.jpg" />
+    <Content Include="Content\assetsfront\images\post-images\6.jpg" />
+    <Content Include="Content\assetsfront\images\post-images\7.jpg" />
+    <Content Include="Content\assetsfront\images\post-images\8.jpg" />
+    <Content Include="Content\assetsfront\images\post-images\9.jpg" />
+    <Content Include="Content\assetsfront\images\users\achraf.jpg" />
+    <Content Include="Content\assetsfront\images\users\Altaf.jpg" />
+    <Content Include="Content\assetsfront\images\users\Apple.jpg" />
+    <Content Include="Content\assetsfront\images\users\iheb.jpg" />
+    <Content Include="Content\assetsfront\images\users\khalil.jpg" />
+    <Content Include="Content\assetsfront\images\users\LinkedIn.jpg" />
+    <Content Include="Content\assetsfront\images\users\user-1.jpg" />
+    <Content Include="Content\assetsfront\images\users\user-10.jpg" />
+    <Content Include="Content\assetsfront\images\users\user-11.jpg" />
+    <Content Include="Content\assetsfront\images\users\user-12.jpg" />
+    <Content Include="Content\assetsfront\images\users\user-13.jpg" />
+    <Content Include="Content\assetsfront\images\users\user-14.jpg" />
+    <Content Include="Content\assetsfront\images\users\user-15.jpg" />
+    <Content Include="Content\assetsfront\images\users\user-16.jpg" />
+    <Content Include="Content\assetsfront\images\users\user-17.jpg" />
+    <Content Include="Content\assetsfront\images\users\user-18.jpg" />
+    <Content Include="Content\assetsfront\images\users\user-19.jpg" />
+    <Content Include="Content\assetsfront\images\users\user-2.jpg" />
+    <Content Include="Content\assetsfront\images\users\user-20.jpg" />
+    <Content Include="Content\assetsfront\images\users\user-3.jpg" />
+    <Content Include="Content\assetsfront\images\users\user-4.jpg" />
+    <Content Include="Content\assetsfront\images\users\user-5.jpg" />
+    <Content Include="Content\assetsfront\images\users\user-6.jpg" />
+    <Content Include="Content\assetsfront\images\users\user-7.jpg" />
+    <Content Include="Content\assetsfront\images\users\user-8.jpg" />
+    <Content Include="Content\assetsfront\images\users\user-9.jpg" />
+    <Content Include="Content\assetsfront\js\bootstrap.min.js" />
+    <Content Include="Content\assetsfront\js\jquery-3.1.1.min.js" />
+    <Content Include="Content\assetsfront\js\jquery.appear.min.js" />
+    <Content Include="Content\assetsfront\js\jquery.incremental-counter.js" />
+    <Content Include="Content\assetsfront\js\jquery.scrollbar.min.js" />
+    <Content Include="Content\assetsfront\js\jquery.sticky-kit.min.js" />
+    <Content Include="Content\assetsfront\js\masonry.pkgd.min.js" />
+    <Content Include="Content\assetsfront\js\script.js" />
+    <Content Include="Content\assets\bundles\c3.bundle.js" />
+    <Content Include="Content\assets\bundles\countTo.bundle.js" />
+    <Content Include="Content\assets\bundles\datatablescripts.bundle.js" />
+    <Content Include="Content\assets\bundles\flotscripts.bundle.js" />
+    <Content Include="Content\assets\bundles\footable.bundle.js" />
+    <Content Include="Content\assets\bundles\fullcalendarscripts.bundle.js" />
+    <Content Include="Content\assets\bundles\jvectormap.bundle.js" />
+    <Content Include="Content\assets\bundles\knob.bundle.js" />
+    <Content Include="Content\assets\bundles\libscripts.bundle.js" />
+    <Content Include="Content\assets\bundles\mainscripts.bundle.js" />
+    <Content Include="Content\assets\bundles\morrisscripts.bundle.js" />
+    <Content Include="Content\assets\bundles\sparkline.bundle.js" />
+    <Content Include="Content\assets\bundles\vendorscripts.bundle.js" />
+    <Content Include="Content\assets\css\style.min.css" />
+    <Content Include="Content\assets\css\weather-icons.min.css" />
+    <Content Include="Content\assets\fonts\themify9f24.svg" />
+    <Content Include="Content\assets\fonts\weathericons-regular-webfont.svg" />
+    <Content Include="Content\assets\images\404.svg" />
+    <Content Include="Content\assets\images\achraf.jpg" />
+    <Content Include="Content\assets\images\blog\05-img.jpg" />
+    <Content Include="Content\assets\images\blog\06-img.jpg" />
+    <Content Include="Content\assets\images\blog\07-img.jpg" />
+    <Content Include="Content\assets\images\blog\08-img.jpg" />
+    <Content Include="Content\assets\images\blog\09-img.jpg" />
+    <Content Include="Content\assets\images\blog\10-img.jpg" />
+    <Content Include="Content\assets\images\blog\11-img.jpg" />
+    <Content Include="Content\assets\images\blog\12-img.jpg" />
+    <Content Include="Content\assets\images\blog\13-img.jpg" />
+    <Content Include="Content\assets\images\ecommerce\1.png" />
+    <Content Include="Content\assets\images\ecommerce\10.png" />
+    <Content Include="Content\assets\images\ecommerce\11.png" />
+    <Content Include="Content\assets\images\ecommerce\2.png" />
+    <Content Include="Content\assets\images\ecommerce\3.png" />
+    <Content Include="Content\assets\images\ecommerce\4.png" />
+    <Content Include="Content\assets\images\ecommerce\5.png" />
+    <Content Include="Content\assets\images\ecommerce\6.png" />
+    <Content Include="Content\assets\images\ecommerce\7.png" />
+    <Content Include="Content\assets\images\ecommerce\8.png" />
+    <Content Include="Content\assets\images\ecommerce\9.png" />
+    <Content Include="Content\assets\images\image-gallery\1.jpg" />
+    <Content Include="Content\assets\images\image-gallery\10.jpg" />
+    <Content Include="Content\assets\images\image-gallery\11.jpg" />
+    <Content Include="Content\assets\images\image-gallery\12.jpg" />
+    <Content Include="Content\assets\images\image-gallery\13.jpg" />
+    <Content Include="Content\assets\images\image-gallery\14.jpg" />
+    <Content Include="Content\assets\images\image-gallery\15.jpg" />
+    <Content Include="Content\assets\images\image-gallery\2.jpg" />
+    <Content Include="Content\assets\images\image-gallery\3.jpg" />
+    <Content Include="Content\assets\images\image-gallery\4.jpg" />
+    <Content Include="Content\assets\images\image-gallery\5.jpg" />
+    <Content Include="Content\assets\images\image-gallery\6.jpg" />
+    <Content Include="Content\assets\images\image-gallery\7.jpg" />
+    <Content Include="Content\assets\images\image-gallery\8.jpg" />
+    <Content Include="Content\assets\images\image-gallery\9.jpg" />
+    <Content Include="Content\assets\images\lg\avatar1.jpg" />
+    <Content Include="Content\assets\images\lg\avatar2.jpg" />
+    <Content Include="Content\assets\images\lg\avatar3.jpg" />
+    <Content Include="Content\assets\images\lg\avatar4.jpg" />
+    <Content Include="Content\assets\images\loader.svg" />
+    <Content Include="Content\assets\images\logo.svg" />
+    <Content Include="Content\assets\images\maintanance.svg" />
+    <Content Include="Content\assets\images\profile_av.jpg" />
+    <Content Include="Content\assets\images\signin.svg" />
+    <Content Include="Content\assets\images\signup.svg" />
+    <Content Include="Content\assets\images\sm\avatar1.jpg" />
+    <Content Include="Content\assets\images\sm\avatar2.jpg" />
+    <Content Include="Content\assets\images\sm\avatar3.jpg" />
+    <Content Include="Content\assets\images\sm\avatar4.jpg" />
+    <Content Include="Content\assets\images\sm\avatar5.jpg" />
+    <Content Include="Content\assets\images\sm\avatar6.jpg" />
+    <Content Include="Content\assets\images\walid.jpg" />
+    <Content Include="Content\assets\images\xs\avatar1.jpg" />
+    <Content Include="Content\assets\images\xs\avatar10.jpg" />
+    <Content Include="Content\assets\images\xs\avatar2.jpg" />
+    <Content Include="Content\assets\images\xs\avatar3.jpg" />
+    <Content Include="Content\assets\images\xs\avatar4.jpg" />
+    <Content Include="Content\assets\images\xs\avatar5.jpg" />
+    <Content Include="Content\assets\images\xs\avatar6.jpg" />
+    <Content Include="Content\assets\images\xs\avatar7.jpg" />
+    <Content Include="Content\assets\images\xs\avatar8.jpg" />
+    <Content Include="Content\assets\images\xs\avatar9.jpg" />
+    <Content Include="Content\assets\js\pages\blog\blog.js" />
+    <Content Include="Content\assets\js\pages\calendar\calendar.js" />
+    <Content Include="Content\assets\js\pages\charts\c3.js" />
+    <Content Include="Content\assets\js\pages\charts\chartjs.js" />
+    <Content Include="Content\assets\js\pages\charts\flot.js" />
+    <Content Include="Content\assets\js\pages\charts\jquery-knob.js" />
+    <Content Include="Content\assets\js\pages\charts\jquery-knob.min.js" />
+    <Content Include="Content\assets\js\pages\charts\morris.js" />
+    <Content Include="Content\assets\js\pages\charts\polar_area_chart.js" />
+    <Content Include="Content\assets\js\pages\charts\sparkline.js" />
+    <Content Include="Content\assets\js\pages\ecommerce.js" />
+    <Content Include="Content\assets\js\pages\forms\advanced-form-elements.js" />
+    <Content Include="Content\assets\js\pages\forms\basic-form-elements.js" />
+    <Content Include="Content\assets\js\pages\forms\dropify.js" />
+    <Content Include="Content\assets\js\pages\forms\editors.js" />
+    <Content Include="Content\assets\js\pages\forms\form-validation.js" />
+    <Content Include="Content\assets\js\pages\forms\form-wizard.js" />
+    <Content Include="Content\assets\js\pages\index.js" />
+    <Content Include="Content\assets\js\pages\maps\google.js" />
+    <Content Include="Content\assets\js\pages\maps\jvectormap.js" />
+    <Content Include="Content\assets\js\pages\medias\image-gallery.js" />
+    <Content Include="Content\assets\js\pages\tables\editable-table.js" />
+    <Content Include="Content\assets\js\pages\tables\footable.js" />
+    <Content Include="Content\assets\js\pages\tables\jquery-datatable.js" />
+    <Content Include="Content\assets\js\pages\ticket-page.js" />
+    <Content Include="Content\assets\js\pages\todo-js.js" />
+    <Content Include="Content\assets\js\pages\ui\notifications.js" />
+    <Content Include="Content\assets\js\pages\ui\range-sliders.js" />
+    <Content Include="Content\assets\js\pages\ui\sortable-nestable.js" />
+    <Content Include="Content\assets\js\pages\ui\sweetalert.js" />
+    <Content Include="Content\assets\js\pages\widgets\infobox\infobox-1.js" />
+    <Content Include="Content\assets\plugins\bootstrap-colorpicker\css\bootstrap-colorpicker.css" />
+    <Content Include="Content\assets\plugins\bootstrap-colorpicker\img\bootstrap-colorpicker\alpha-horizontal.png" />
+    <Content Include="Content\assets\plugins\bootstrap-colorpicker\img\bootstrap-colorpicker\alpha.png" />
+    <Content Include="Content\assets\plugins\bootstrap-colorpicker\img\bootstrap-colorpicker\hue-horizontal.png" />
+    <Content Include="Content\assets\plugins\bootstrap-colorpicker\img\bootstrap-colorpicker\hue.png" />
+    <Content Include="Content\assets\plugins\bootstrap-colorpicker\img\bootstrap-colorpicker\saturation.png" />
+    <Content Include="Content\assets\plugins\bootstrap-colorpicker\js\bootstrap-colorpicker.js" />
+    <Content Include="Content\assets\plugins\bootstrap-material-datetimepicker\css\bootstrap-material-datetimepicker.css" />
+    <Content Include="Content\assets\plugins\bootstrap-material-datetimepicker\js\bootstrap-material-datetimepicker.js" />
+    <Content Include="Content\assets\plugins\bootstrap-notify\bootstrap-notify.js" />
+    <Content Include="Content\assets\plugins\bootstrap-select\css\bootstrap-select.css" />
+    <Content Include="Content\assets\plugins\bootstrap-tagsinput\bootstrap-tagsinput.css" />
+    <Content Include="Content\assets\plugins\bootstrap-tagsinput\bootstrap-tagsinput.js" />
+    <Content Include="Content\assets\plugins\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\assets\plugins\chartjs\Chart.bundle.js" />
+    <Content Include="Content\assets\plugins\chartjs\polar_area_chart.js" />
+    <Content Include="Content\assets\plugins\charts-c3\plugin.css" />
+    <Content Include="Content\assets\plugins\ckeditor\ckeditor.js" />
+    <Content Include="Content\assets\plugins\dropify\css\dropify.min.css" />
+    <Content Include="Content\assets\plugins\dropify\fonts\dropify.svg" />
+    <Content Include="Content\assets\plugins\dropify\js\dropify.min.js" />
+    <Content Include="Content\assets\plugins\dropzone\dropzone.js" />
+    <Content Include="Content\assets\plugins\editable-table\mindmup-editabletable.js" />
+    <Content Include="Content\assets\plugins\footable-bootstrap\css\footable.bootstrap.min.css" />
+    <Content Include="Content\assets\plugins\footable-bootstrap\css\footable.standalone.min.css" />
+    <Content Include="Content\assets\plugins\fullcalendar\fullcalendar.min.css" />
+    <Content Include="Content\assets\plugins\gmaps\gmaps.js" />
+    <Content Include="Content\assets\plugins\ion-rangeslider\css\ion.rangeSlider.css" />
+    <Content Include="Content\assets\plugins\ion-rangeslider\js\ion.rangeSlider.js" />
+    <Content Include="Content\assets\plugins\jquery-datatable\buttons\buttons.bootstrap4.min.js" />
+    <Content Include="Content\assets\plugins\jquery-datatable\buttons\buttons.colVis.min.js" />
+    <Content Include="Content\assets\plugins\jquery-datatable\buttons\buttons.flash.min.js" />
+    <Content Include="Content\assets\plugins\jquery-datatable\buttons\buttons.html5.min.js" />
+    <Content Include="Content\assets\plugins\jquery-datatable\buttons\buttons.print.min.js" />
+    <Content Include="Content\assets\plugins\jquery-datatable\buttons\dataTables.buttons.min.js" />
+    <Content Include="Content\assets\plugins\jquery-datatable\dataTables.bootstrap4.min.css" />
+    <Content Include="Content\assets\plugins\jquery-inputmask\jquery.inputmask.bundle.js" />
+    <Content Include="Content\assets\plugins\jquery-knob\jquery.knob.min.js" />
+    <Content Include="Content\assets\plugins\jquery-sparkline\jquery.sparkline.js" />
+    <Content Include="Content\assets\plugins\jquery-spinner\css\bootstrap-spinner.css" />
+    <Content Include="Content\assets\plugins\jquery-spinner\js\jquery.spinner.js" />
+    <Content Include="Content\assets\plugins\jquery-steps\jquery.steps.css" />
+    <Content Include="Content\assets\plugins\jquery-steps\jquery.steps.js" />
+    <Content Include="Content\assets\plugins\jquery-validation\jquery.validate.js" />
+    <Content Include="Content\assets\plugins\jvectormap\jquery-jvectormap-2.0.3.css" />
+    <Content Include="Content\assets\plugins\jvectormap\jquery-jvectormap-2.0.3.min.css" />
+    <Content Include="Content\assets\plugins\jvectormap\jquery-jvectormap-au-mill.js" />
+    <Content Include="Content\assets\plugins\jvectormap\jquery-jvectormap-in-mill.js" />
+    <Content Include="Content\assets\plugins\jvectormap\jquery-jvectormap-uk-mill-en.js" />
+    <Content Include="Content\assets\plugins\jvectormap\jquery-jvectormap-us-aea-en.js" />
+    <Content Include="Content\assets\plugins\jvectormap\jquery-jvectormap-world-mill-en.js" />
+    <Content Include="Content\assets\plugins\light-gallery\css\lightgallery.css" />
+    <Content Include="Content\assets\plugins\light-gallery\fonts\lgd641.svg" />
+    <Content Include="Content\assets\plugins\light-gallery\img\loading.gif" />
+    <Content Include="Content\assets\plugins\light-gallery\img\video-play.png" />
+    <Content Include="Content\assets\plugins\light-gallery\img\vimeo-play.png" />
+    <Content Include="Content\assets\plugins\light-gallery\img\youtube-play.png" />
+    <Content Include="Content\assets\plugins\light-gallery\js\lightgallery-all.min.js" />
+    <Content Include="Content\assets\plugins\momentjs\moment.js" />
+    <Content Include="Content\assets\plugins\morrisjs\morris.css" />
+    <Content Include="Content\assets\plugins\morrisjs\morris.min.css" />
+    <Content Include="Content\assets\plugins\multi-select\css\multi-select.css" />
+    <Content Include="Content\assets\plugins\multi-select\img\switch.png" />
+    <Content Include="Content\assets\plugins\multi-select\js\jquery.multi-select.js" />
+    <Content Include="Content\assets\plugins\nestable\jquery.nestable.js" />
+    <Content Include="Content\assets\plugins\nouislider\nouislider.js" />
+    <Content Include="Content\assets\plugins\nouislider\nouislider.min.css" />
+    <Content Include="Content\assets\plugins\select2\select2-spinner.gif" />
+    <Content Include="Content\assets\plugins\select2\select2.css" />
+    <Content Include="Content\assets\plugins\select2\select2.min.js" />
+    <Content Include="Content\assets\plugins\select2\select2.png" />
+    <Content Include="Content\assets\plugins\select2\select2x2.png" />
+    <Content Include="Content\assets\plugins\summernote\dist\summernote.css" />
+    <Content Include="Content\assets\plugins\summernote\dist\summernote.js" />
+    <Content Include="Content\assets\plugins\sweetalert\sweetalert.css" />
+    <Content Include="Content\assets\plugins\sweetalert\sweetalert.min.js" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Compile Include="Controllers\Missioncontroller.cs" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\assetsfront\fonts\agency-fb.eot" />
+    <Content Include="Content\assetsfront\fonts\agency-fb.ttf" />
+    <Content Include="Content\assetsfront\fonts\fontawesome-webfont3e6e.eot" />
+    <Content Include="Content\assetsfront\fonts\fontawesome-webfont3e6e.ttf" />
+    <Content Include="Content\assetsfront\fonts\fontawesome-webfont3e6e.woff" />
+    <Content Include="Content\assetsfront\fonts\fontawesome-webfont3e6e.woff2" />
+    <Content Include="Content\assetsfront\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="Content\assetsfront\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\assetsfront\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\assetsfront\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\assetsfront\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\assetsfront\fonts\glyphicons-halflings-regulard41d.eot" />
+    <Content Include="Content\assetsfront\fonts\ionicons28b5.eot" />
+    <Content Include="Content\assetsfront\fonts\ionicons28b5.ttf" />
+    <Content Include="Content\assetsfront\fonts\ionicons28b5.woff" />
+    <Content Include="Content\assets\fonts\Material-Design-Iconic-Fontd1f1.ttf" />
+    <Content Include="Content\assets\fonts\Material-Design-Iconic-Fontd1f1.woff" />
+    <Content Include="Content\assets\fonts\Material-Design-Iconic-Fontd1f1.woff2" />
+    <Content Include="Content\assets\fonts\themify9f24.eot" />
+    <Content Include="Content\assets\fonts\themify9f24.ttf" />
+    <Content Include="Content\assets\fonts\themify9f24.woff" />
+    <Content Include="Content\assets\fonts\themifyd41d.eot" />
+    <Content Include="Content\assets\fonts\weathericons-regular-webfont.eot" />
+    <Content Include="Content\assets\fonts\weathericons-regular-webfont.ttf" />
+    <Content Include="Content\assets\fonts\weathericons-regular-webfont.woff" />
+    <Content Include="Content\assets\fonts\weathericons-regular-webfont.woff2" />
+    <Content Include="Content\assets\fonts\weathericons-regular-webfontd41d.eot" />
+    <Content Include="Content\assets\plugins\dropify\fonts\dropify.eot" />
+    <Content Include="Content\assets\plugins\dropify\fonts\dropify.ttf" />
+    <Content Include="Content\assets\plugins\dropify\fonts\dropify.woff" />
+    <Content Include="Content\assets\plugins\light-gallery\fonts\lgd41d.eot" />
+    <Content Include="Content\assets\plugins\light-gallery\fonts\lgd641.eot" />
+    <Content Include="Content\assets\plugins\light-gallery\fonts\lgd641.ttf" />
+    <Content Include="Content\assets\plugins\light-gallery\fonts\lgd641.woff" />
+    <Content Include="Content\assets\plugins\summernote\dist\font\summernoted41d.eot" />
+    <Content Include="Content\assets\plugins\summernote\dist\font\summernotef534.eot" />
+    <Content Include="Content\assets\plugins\summernote\dist\font\summernotef534.ttf" />
+    <Content Include="Content\assets\plugins\summernote\dist\font\summernotef534.woff" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="App_Browsers\qt.browser" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Rotativa\help-wkhtmltoimage.txt" />
+    <Content Include="Rotativa\help-wkhtmltopdf.txt" />
+    <Content Include="Rotativa\wkhtmltoimage.exe" />
+    <Content Include="Rotativa\wkhtmltopdf.exe" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="tesseract_aspnet.csproj" />
+    <Content Include="Views\selfevaluation\staroutline.png" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Mission\Index.cshtml" />
+    <Content Include="Views\Mission\Create.cshtml" />
+    <Content Include="Views\Shared\front_Layout.cshtml" />
+    <Content Include="Views\Expances\Index.cshtml" />
+    <Content Include="Views\missionexpenses\Create.cshtml" />
+    <Content Include="Views\missionexpenses\Delete.cshtml" />
+    <Content Include="Views\missionexpenses\Details.cshtml" />
+    <Content Include="Views\missionexpenses\Edit.cshtml" />
+    <Content Include="Views\missionexpenses\Index.cshtml" />
+    <Content Include="Views\Expances\Create.cshtml" />
+    <Content Include="Views\Shared\Layout1.cshtml" />
+    <Content Include="Views\Mission\Details.cshtml" />
+    <Content Include="Views\Mission\delete.cshtml" />
+    <Content Include="Views\Mission\update.cshtml" />
+    <Content Include="Views\Expances\Details.cshtml" />
+    <Content Include="Views\Expances\Edit.cshtml" />
+    <Content Include="Views\Expances\Delete.cshtml" />
+    <Content Include="Views\Mission\missionExpnce.cshtml" />
+    <Content Include="Views\Mission\recherche.cshtml" />
+    <Content Include="Views\Expances\mail.cshtml" />
+    <Content Include="Views\Shared\Layout2.cshtml" />
+    <Content Include="Views\Expances\PrintPDF.cshtml" />
+    <Content Include="Views\Missionemp\Index.cshtml" />
+    <Content Include="Views\Missionemp\Details.cshtml" />
+    <Content Include="Views\Expancesadmin\Index.cshtml" />
+    <Content Include="Views\Expancesadmin\Details.cshtml" />
+    <Content Include="Views\Missionemp\missionExpnce.cshtml" />
+    <Content Include="Views\Expancesadmin\Charge.cshtml" />
+    <Content Include="Views\Missionrh\Index.cshtml" />
+    <Content Include="Views\Missionrh\Details.cshtml" />
+    <Content Include="Views\Missionrh\missionExpnce.cshtml" />
+    <Content Include="tessdata\fra.cube.bigrams" />
+    <Content Include="tessdata\fra.cube.fold" />
+    <Content Include="tessdata\fra.cube.lm" />
+    <Content Include="tessdata\fra.cube.nn" />
+    <Content Include="tessdata\fra.cube.params" />
+    <Content Include="tessdata\fra.cube.size" />
+    <Content Include="tessdata\fra.cube.word-freq" />
+    <Content Include="tessdata\fra.tesseract_cube.nn" />
+    <Content Include="tessdata\fra.traineddata" />
+    <Content Include="tessdata\ara.cube.bigrams" />
+    <Content Include="tessdata\ara.cube.fold" />
+    <Content Include="tessdata\ara.cube.lm" />
+    <Content Include="tessdata\ara.cube.nn" />
+    <Content Include="tessdata\ara.cube.params" />
+    <Content Include="tessdata\ara.cube.size" />
+    <Content Include="tessdata\ara.cube.word-freq" />
+    <Content Include="tessdata\ara.traineddata" />
+    <Content Include="tessdata\eng.cube.params" />
+    <Content Include="tessdata\hin.cube.params" />
+    <Content Include="tessdata\ita.cube.params" />
+    <Content Include="tessdata\rus.cube.params" />
+    <Content Include="tessdata\spa.cube.params" />
+    <Content Include="tessdata\dan-frak.traineddata" />
+    <Content Include="tessdata\deu-frak.traineddata" />
+    <Content Include="tessdata\slk-frak.traineddata" />
+    <Content Include="tessdata\eng.cube.bigrams" />
+    <Content Include="tessdata\eng.cube.fold" />
+    <Content Include="tessdata\eng.cube.lm" />
+    <Content Include="tessdata\eng.cube.nn" />
+    <Content Include="tessdata\eng.cube.size" />
+    <Content Include="tessdata\eng.cube.word-freq" />
+    <Content Include="tessdata\eng.tesseract_cube.nn" />
+    <Content Include="tessdata\eng.traineddata" />
+    <Content Include="Views\Answer\Create.cshtml" />
+    <Content Include="Views\Answer\Delete.cshtml" />
+    <Content Include="Views\Answer\Edit.cshtml" />
+    <Content Include="Views\Answer\Index.cshtml" />
+    <Content Include="Views\Formation\Delete.cshtml" />
+    <Content Include="Views\Formation\Index.cshtml" />
+    <Content Include="Views\QuestionAnswers\Details.cshtml" />
+    <Content Include="Views\QuestionAnswers\Index.cshtml" />
+    <Content Include="Views\QuestionAnswers\loadQuiz.cshtml" />
+    <Content Include="Views\Question\Create.cshtml" />
+    <Content Include="Views\Question\Delete.cshtml" />
+    <Content Include="Views\Question\Details.cshtml" />
+    <Content Include="Views\Question\Edit.cshtml" />
+    <Content Include="Views\Question\Index.cshtml" />
+    <Content Include="Views\Quiz\Create.cshtml" />
+    <Content Include="Views\Quiz\Delete.cshtml" />
+    <Content Include="Views\Quiz\Details.cshtml" />
+    <Content Include="Views\Quiz\Edit.cshtml" />
+    <Content Include="Views\Quiz\Index.cshtml" />
+    <Content Include="Views\Evaluation\Create.cshtml" />
+    <Content Include="Views\Evaluation\Delete.cshtml" />
+    <Content Include="Views\Evaluation\Index.cshtml" />
+    <Content Include="Views\selfevaluation\Create.cshtml" />
+    <Content Include="Views\selfevaluation\Delete.cshtml" />
+    <Content Include="Views\selfevaluation\Details.cshtml" />
+    <Content Include="Views\selfevaluation\Edit.cshtml" />
+    <Content Include="Views\selfevaluation\Index.cshtml" />
+    <Content Include="Views\Conge\Create.cshtml" />
+    <Content Include="Views\Conge\list.cshtml" />
+    <Content Include="Views\Employe\Create.cshtml" />
+    <Content Include="Views\Employe\Edit.cshtml" />
+    <Content Include="Views\Employe\List.cshtml" />
+    <Content Include="Views\Activity\Create.cshtml" />
+    <Content Include="Views\Activity\Create2.cshtml" />
+    <Content Include="Views\Activity\Index.cshtml" />
+    <Content Include="Views\Project\Create.cshtml" />
+    <Content Include="Views\Project\Delete.cshtml" />
+    <Content Include="Views\Project\Details.cshtml" />
+    <Content Include="Views\Project\Edit.cshtml" />
+    <Content Include="Views\Project\Index.cshtml" />
+    <Content Include="Views\TimesheetModels\Create.cshtml" />
+    <Content Include="Views\TimesheetModels\Delete.cshtml" />
+    <Content Include="Views\TimesheetModels\Details.cshtml" />
+    <Content Include="Views\TimesheetModels\Edit.cshtml" />
+    <Content Include="Views\TimesheetModels\Index.cshtml" />
+    <Content Include="Views\VisualizeData\ColumnChart.cshtml" />
+    <Content Include="Views\VisualizeData\PieChart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Uploads\" />
+    <Folder Include="Views\Missioncontroller\" />
+    <Folder Include="Views\Missionempcontroller\" />
+    <Folder Include="Views\Miss\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Piiii.data\Piiii.data.csproj">
+      <Project>{050A6AD6-25D5-41D2-BA62-C987D543BA28}</Project>
+      <Name>Piiii.data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Piiii.domain\Piiii.domain.csproj">
+      <Project>{6c0aea96-da7c-411d-921f-1571e1e88ada}</Project>
+      <Name>Piiii.domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Piiii.service\Piiii.service.csproj">
+      <Project>{b32e1b47-1668-4b4a-b83c-bd94bbb72357}</Project>
+      <Name>Piiii.service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Service.Patern\Service.Patern.csproj">
+      <Project>{61eb8e13-6fd5-47ed-8cb9-389feb8c0e18}</Project>
+      <Name>Service.Patern</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52613</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:52613/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Ce projet fait référence à des packages NuGet qui sont manquants sur cet ordinateur. Utilisez l'option de restauration des packages NuGet pour les télécharger. Pour plus d'informations, consultez http://go.microsoft.com/fwlink/?LinkID=322105. Le fichier manquant est : {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.3.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.3.0\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Tesseract.3.3.0\build\Tesseract.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Tesseract.3.3.0\build\Tesseract.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.3.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.targets')" />
+  <Import Project="..\packages\Tesseract.3.3.0\build\Tesseract.targets" Condition="Exists('..\packages\Tesseract.3.3.0\build\Tesseract.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

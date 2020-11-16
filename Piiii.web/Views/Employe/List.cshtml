@@ -1,0 +1,82 @@
+﻿@model Piiii.web.Models.EmployeViewModels
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/Layout1.cshtml";
+}
+<h2>Employes List</h2>
+
+<div class="container">
+    <div class="form-group">
+       <div class="input-group">
+
+           <span class="input-group-addon"><i class="glyphicon glyphicon-search" ></i></span>
+           <input type="text" id="Search" placeholder="Search"  class = "form-control1 ng-invalid ng-invalid-required ng-touched"/>
+       </div> 
+    
+    
+    
+    </div>
+
+
+    </div>
+
+<div class="panel-body no-padding">
+    <table class="table table-striped">
+        <tr>
+           
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>Email</th>
+            <th>Addresse</th>
+            <th>Poste</th>
+            <th>Salaire</th>
+            
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+        @foreach (var r in ViewBag.result)
+        {
+
+            <tr class="Search">
+               
+                <td>@r.nom</td>
+                <td>@r.prenom</td>
+                <td>@r.email</td>
+                
+                <td>@r.adresse</td>
+                <td>@r.poste</td>
+                <td>@r.salaire</td>
+               
+               
+                <td>@Html.ActionLink("Edit", "Edit", new { id = r.Id_emp })</td>
+                <td>@Html.ActionLink("Delete", "Delete", new { id = r.Id_emp })</td>
+            </tr>
+
+        }
+
+    </table>
+    </div>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script>
+
+    $(document).ready(function () {
+        function Contains(text_one, text_two) {
+            if (text_one.indexOf(text_two) != -1)
+                return true;
+        }
+        $("#Search").keyup(function () {
+            var searchText = $("#Search").val().toLowerCase();
+            $(".Search").each(function () {
+                if (!Contains($(this).text().toLowerCase(), searchText)) {
+                    $(this).hide();
+                }
+                else {
+                    $(this).show();
+                }
+            });
+        });
+    });
+
+
+
+</script>

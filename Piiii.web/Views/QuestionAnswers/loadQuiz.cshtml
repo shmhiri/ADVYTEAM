@@ -1,0 +1,109 @@
+﻿@model Piiii.web.Models.QuizQuestionAnswers
+
+@{
+    ViewBag.Title = "loadQuiz";
+    Layout = "~/Views/Shared/Layout1.cshtml";
+}
+
+<script>
+    $(document).ready(function () {
+        $("input:checked").removeAttr("checked");
+    });
+</script>
+
+
+<div class="colorlib-work">
+    <div class="container">
+        <h2>load Quiz</h2>
+        @using (Html.BeginForm("loadQuiz", "QuestionAnswers", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <div class="row cell">
+                <div class="example bg-grayLighter" data-text="Directions">
+                    <ul class="simple-list">
+                        <li class="align-left">When you have made your selection for all statements, click on the button 'Submit.'</li>
+                        <li class="align-left">Mark 'True' or 'False' for each statement.</li>
+                        <li class="align-left">You must score 80%  to pass.</li>
+                        <li class="align-left">You have a single attempt.</li>
+                    </ul>
+                </div>
+            </div>
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="colorlib-work">
+                <div class="row animate-box">
+                    <div class="featured-wrap">
+                        <div class="col-md-8 col-md-offset-2">
+                            <div class="featured-entry">
+
+                                <div class="form-horizontal">
+
+                                    <div class="row cell">
+                                        <div class="row cell">
+                                            <div class="panel" data-role="panel">
+                                                <div class="heading">
+                                                    <span class="title">  </span>
+                                                </div>
+                                                <div class="content">
+
+
+                                                    <dl class="dl-horizontal">
+                                                        @Html.HiddenFor(x => x.quizId)
+
+                                                        @for (var i = 0; i < Model.Questions.Count(); i++)
+
+                                                        {
+
+
+                                                            @Html.HiddenFor(x => x.Questions[i].id_Question)
+
+                                                            <dt> @Html.DisplayFor(q => q.Questions[i].question_name) </dt>
+                                                            <dd>@Html.DisplayFor(q => q.Questions[i].question_description)</dd>
+                                                            <br />
+                                                            for (var j = 0; j < Model.answers.Count(); j++)
+                                                            {
+                                                                if (Model.answers[j].question_id_Question == Model.Questions[i].id_Question)
+                                                                {
+                                                                    @Html.HiddenFor(x => x.answers[j].id_Answer)
+                                                                    <dt>
+                                                                        @Html.RadioButtonFor(model => model.Questions[i].userchoice, Model.answers[j].flag, new { id = Model.answers[j].question_id_Question })
+                                                                    </dt>
+
+                                                                    <dd>@Html.Label(Model.answers[j].answer_name)</dd>
+                                                                    <br />
+                                                                }
+
+
+                                                            }
+
+
+
+
+
+                                                        }
+                                                    </dl>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <div class="col-md-offset-2 col-md-10">
+                                            <input type="submit" value="Submit" class="btn btn-default" />
+                                            <input type="reset" value="Reset" class="btn btn-default" />
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        }
+
+    </div>
+</div>

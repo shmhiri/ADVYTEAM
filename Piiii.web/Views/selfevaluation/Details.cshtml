@@ -1,0 +1,51 @@
+﻿@model Piiii.domain.selfevaluation
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/Layout1.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>selfevaluation</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.employee.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.employee.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.improvements)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.improvements)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.qualities)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.qualities)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.score)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.score)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

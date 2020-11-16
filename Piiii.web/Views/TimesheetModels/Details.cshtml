@@ -1,0 +1,66 @@
+﻿@model Piiii.web.Models.TimesheetModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>TimesheetModel</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.conges)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.conges)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.heure)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.heure)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.jour)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.jour)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.poste)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.poste)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.employer_id_userId)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.employer_id_userId)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

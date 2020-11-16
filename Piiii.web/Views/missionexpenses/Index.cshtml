@@ -1,0 +1,76 @@
+﻿@model IEnumerable<Piiii.domain.missionexpenses>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout1.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.cost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.image)
+
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.kilomtrage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.totalCost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.type)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.cost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.image)
+            <img style="width:200px; height:200px" src="@Url.Content("~/Uploads/"+item.image)"  />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.kilomtrage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.totalCost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.type)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.refrence }) |
+            @Html.ActionLink("Details", "Details", new { id=item.refrence }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.refrence })
+        </td>
+    </tr>
+
+
+
+}
+
+</table>
+

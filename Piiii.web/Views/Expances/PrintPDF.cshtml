@@ -1,0 +1,80 @@
+﻿@model List<Piiii.domain.missionexpenses>
+
+<style>
+    thead {
+        background-color: black;
+        color: white
+    }
+
+    table {
+        border: 1px solid black;
+    }
+
+    td, th {
+        padding: 5px;
+        font-size: 14px;
+    }
+</style>
+
+<table class="table table-bordered table-striped" border="1" style="border-color:black">
+    <thead>
+        <tr>
+            <td>refrence</td>
+            <td>cost</td>
+            <td>date</td>
+            <td>description</td>
+            <td>image</td>
+            <td>kilomtrage</td>
+            <td>type</td>
+            <td>user_userId</td>
+            <td>is it apprved </td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@item.refrence</td>
+            <td>@item.cost</td>
+            <td>@item.date</td>
+            <td>@item.description</td>
+            <td>
+                @item.image
+
+                <img style="width:200px; height:200px" src="@Server.MapPath("~/Uploads/"+item.image)" />
+            </td>
+            <td>@item.kilomtrage</td>
+            <td>@item.type</td>
+            <td>@item.user_userId</td>
+
+            <td>
+
+                @if (item.isApproved == 0)
+                {
+                    <h2>mission is not aproved</h2>
+
+                }
+                else
+                {
+                    <h2>mission is aproved</h2>
+                }
+            </td>
+
+        </tr>
+
+        }
+    </tbody>
+
+</table>
+<div>
+
+    <h2>Total number of kilometre passed</h2>
+    @Model.Sum(i => i.kilomtrage) <h2>KM</h2>
+
+</div>
+<div>
+    <h2>Total of monny spent</h2>
+    @Model.Sum(i => i.cost) <h2>€</h2>
+
+</div>
+

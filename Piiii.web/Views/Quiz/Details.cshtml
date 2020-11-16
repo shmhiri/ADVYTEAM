@@ -1,0 +1,73 @@
+﻿@model Piiii.domain.quiz
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/Layout1.cshtml";
+}
+<div class="colorlib-work">
+    <div class="container">
+        <h2>Details</h2>
+
+        <div>
+            <h4>quiz</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.QuizName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.QuizName)
+                </dd>
+
+
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.formation1.catalog.nom_cat)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.formation1.catalog.nom_cat)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.formation1.description)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.formation1.description)
+                </dd>
+
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.formation1.prerequis)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.formation1.prerequis)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.question)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.question)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Result)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Result)
+                </dd>
+
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.id_Quiz }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+</div>
+</div>

@@ -1,0 +1,103 @@
+﻿@model PagedList.IPagedList<Piiii.domain.quiz>
+@using PagedList.Mvc;
+
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout1.cshtml";
+}
+
+<div class="colorlib-work">
+    <div class="container">
+        <h2>Index</h2>
+        @using (Html.BeginForm())
+        {
+            <div class="row animate-box">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <form class="form-inline qbstp-header-subscribe">
+                                <div class="col-three-forth">
+                                    <div class="form-group">
+                                        <div>
+                                            @Html.TextBox("filtre", "Search by name", new { @class = "form-control" })
+
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-one-third">
+                                    <div class="form-group">
+                                        <button type="submit" id="submit" class="btn btn-primary">Search Now</button>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+        <p>
+            @Html.ActionLink("Create New", "Create")
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    Quiz name
+
+                </th>
+                <th>
+                    Formation Name
+
+                </th>
+                <th>
+                    Prerequisites
+
+                </th>
+                <th>
+                    Level
+
+                </th>
+
+                
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.QuizName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.formation1.catalog.nom_cat)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.formation1.prerequis)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.formation1.niveauobt)
+                    </td>
+
+                    
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.id_Quiz }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.id_Quiz }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.id_Quiz }) |
+                        @Html.ActionLink("View Questions", "Index", "Question", new { id = item.id_Quiz }, null) |
+                        @Html.ActionLink("Add Question", "Create", "Question", new { id = item.id_Quiz }, null)
+                    </td>
+                </tr>
+            }
+
+        </table>
+        Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+    </div>
+</div>

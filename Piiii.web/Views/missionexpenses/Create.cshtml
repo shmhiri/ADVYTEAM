@@ -1,0 +1,113 @@
+﻿@model Piiii.domain.missionexpenses
+
+@{
+    /**/
+
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/Layout1.cshtml";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm("Create", "missionexpenses", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>missionexpenses</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @{
+        var selectList = new SelectList(
+            new List<SelectListItem>
+            {
+new SelectListItem {Text = "Transport", Value = "Transport"},
+new SelectListItem {Text = "Hotel", Value = "Hotel"},
+new SelectListItem {Text = "Resto", Value = "Resto"},
+new SelectListItem {Text = "Other", Value = "Other"},
+            }, "Value", "Text");
+    }
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.type, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10" id="lbox">
+            @Html.DropDownListFor(model => model.type, selectList, "Default label", new { htmlAttributes = new { @class = "form-control" } })
+
+            @Html.ValidationMessageFor(model => model.type, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.cost, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.cost, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.cost, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.description, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.description, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.description, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+    <div class="form-group" id="box" runat="server" visible="false">
+
+        @Html.LabelFor(model => model.kilomtrage, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.kilomtrage, new { htmlAttributes = new { @class = "form-control" } })
+
+        </div>
+    </div>
+
+
+
+
+    <div class="form-group">
+        <input type="file" name="file" id="file" class="btn-success" onclick="btnSave_Click" />
+
+    </div>
+
+    <script language="javascript">
+        function Checkfiles() {
+            var fup = document.getElementById('file');
+            var fileName = fup.value;
+            var ext = fileName.substring(fileName.lastIndexOf('.') + 1);
+            if (ext == "gif" || ext == "GIF" || ext == "PNG" || ext == "png" || ext == "jpg" || ext == "JPG" || ext == "bmp" || ext == "BMP") {
+                return true;
+            }
+            else {
+                alert("Upload Gif,Bmp or Jpg images only");
+                fup.focus();
+                return false;
+            }
+        }
+    </script>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+
+        </div>
+    </div>
+</div>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#type").change(function () {
+                if ($(this).val() != "Transport") {
+                    $("#box").hide();
+                } else {
+                    $("#box").show();
+                }
+            });
+        });
+    </script>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

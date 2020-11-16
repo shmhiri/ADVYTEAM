@@ -1,0 +1,53 @@
+﻿@model Piiii.domain.selfevaluation
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/Layout1.cshtml";
+}
+
+<div class="form-group">
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.employee.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.employee.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.improvements)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.improvements)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.qualities)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.qualities)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.score)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.score)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            @Html.ActionLink("Return", "Index")
+        </div>
+    }
+</div>

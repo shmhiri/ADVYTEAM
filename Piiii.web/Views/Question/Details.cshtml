@@ -1,0 +1,51 @@
+﻿@model Piiii.domain.question
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/Layout1.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>question</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.quiz.QuizName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.quiz.QuizName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.question_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.question_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.question_description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.question_description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.answer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.answer)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id_Question }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

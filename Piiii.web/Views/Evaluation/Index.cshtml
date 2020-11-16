@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout1.cshtml";
+}
+
+
+<br />
+<br />
+<br />
+<!Doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+</head>
+<body>
+    <table cellpadding="2" cellspacing="2" class="table table-dark">
+        <tr>
+           
+            <th class="text-center">Employee's name</th>
+            <th class="text-center">Score</th>
+        </tr>
+        @foreach (var p in ViewBag.result)
+        {
+            <tr>
+               
+                <th class="text-center">@p.employee.name</th>
+                <th class="text-center">@p.score</th>
+                <th>@Html.ActionLink("Delete","Delete", new { id=p.id }, new {@class= "btn-danger" })</th>
+            </tr>
+            
+        }
+    </table>
+    @Html.ActionLink("Add Evaluation", "Create", new { @class = "btn-danger" })
+</body>
+</html>
+<br />
+<br />
+<br />

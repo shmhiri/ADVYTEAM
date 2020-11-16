@@ -1,0 +1,59 @@
+﻿
+@{
+    Layout = "~/Views/Shared/Layout1.cshtml";
+}
+
+<!Doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+</head>
+<body>
+    <a href="@Url.Action("create","Activity")"> add Activity</a>
+    <table cellpadding="2" cellspacing="2" border="1">
+        <tr>
+            <th>Code</th>
+            <th>Date debut</th>
+            <th>Date fin</th>
+            <th>Date sbmited</th>
+            <th>Etat</th>
+            <th>description</th>
+
+
+
+        </tr>
+        @foreach (var p in ViewBag.result)
+        {
+            <tr>
+                <th>@p.code</th>
+                <th>@p.datedebut</th>
+                <th>@p.datefin</th>
+                <th>@p.datesubmited</th>
+                <th>@p.etat</th>
+                <th>@p.otherdetai</th>
+
+
+
+
+
+            </tr>
+
+        }
+    </table>
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/5dde8933d96992700fc9851d/default';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
+</body>
+</html>
+
+

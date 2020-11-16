@@ -1,0 +1,85 @@
+﻿@model Piiii.domain.missionexpenses
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/Layout1.cshtml";
+
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>missionexpenses</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.type)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.image)
+        </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.cost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.description)
+        </dd>
+
+        <div id="box" runat="server" visible="false">
+            <dt>
+                @Html.DisplayNameFor(model => model.kilomtrage)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.kilomtrage)
+            </dd>
+
+        </div>
+
+
+        <dd>
+
+            <img style="width:300px; height:300px" src="@Url.Content("~/Uploads/"+Model.image)" />
+        </dd>
+    </dl>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#type").change(function () {
+                if ($(this).val() != "Transport") {
+                    $("#box").hide();
+                } else {
+                    $("#box").show();
+                }
+            });
+        });
+    </script>
+
+
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+

@@ -1,0 +1,67 @@
+﻿@model List<Piiii.domain.timesheet>
+
+@{
+    Layout = "~/Views/Shared/Layout1.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                Conges
+            </th>
+            <th>
+                Heure travailler
+            </th>
+            <th>
+                jour travailler
+            </th>
+            <th>
+                poste
+            </th>
+        <th>
+            User id
+        </th>
+        <th>
+            Action
+        </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.conges)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.heure)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.jour)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.poste)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.employer_id_userId)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                </td>
+            </tr>
+        }
+
+    </table>
+</body>
+</html>

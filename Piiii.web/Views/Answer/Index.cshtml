@@ -1,0 +1,45 @@
+﻿ @model IEnumerable<Piiii.domain.answer>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout1.cshtml";
+}
+<div class="colorlib-work">
+    <div class="container">
+        <h2>Index</h2>
+
+        <p>
+            @Html.ActionLink("Create New", "Create")
+        </p>
+        <table class="table">
+            <tr>
+               
+                <th>
+                    @Html.DisplayNameFor(model => model.answer_name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.flag)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                   
+                    <td>
+                        @Html.DisplayFor(modelItem => item.answer_name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.flag)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.id_Answer }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.id_Answer })
+                    </td>
+                </tr>
+            }
+
+        </table>
+</div>
+</div>

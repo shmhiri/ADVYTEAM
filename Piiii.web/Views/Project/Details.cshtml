@@ -1,0 +1,74 @@
+﻿@model Piiii.web.Models.ProjectModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>ProjectModel</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.datedebut)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.datedebut)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.datefin)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.datefin)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.otherdetai)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.otherdetai)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Project_code_id)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Project_code_id)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.manager_id_userId)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.manager_id_userId)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

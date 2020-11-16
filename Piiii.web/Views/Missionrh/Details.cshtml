@@ -1,0 +1,253 @@
+﻿@model Piiii.web.Models.mission
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/Layout1.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>mission</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.datedebut)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.datedebut)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.datefin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.datefin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estimation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estimation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.etat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.etat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.isProvidedAccd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.isProvidedAccd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.isProvidedTrsp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.isProvidedTrsp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.participantsNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.participantsNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.place)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.place)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.secondSkill)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.secondSkill)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.skillsRequired)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.skillsRequired)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.state)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.state)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.subject)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.subject)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.thirdSkill)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.thirdSkill)
+        </dd>
+
+    </dl>
+</div>
+<p>
+
+    @Html.ActionLink("Back to List", "Index")
+</p>
+<div id="map">
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+        * element that contains the map. */
+        #map {
+            height: 100%;
+        }
+        /* Optional: Makes the sample page fill the window. */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    @if (Model.place == "New York")
+    {
+
+        <script>
+            // Initialize and add the map
+            function initMap() {
+
+                var uluru = { lat: 40.7808, lng: -73.9772 };
+                // The map, centered at Uluru
+                var map = new google.maps.Map(
+                    document.getElementById('map'), { zoom: 4, center: uluru });
+                // The marker, positioned at Uluru
+                var marker = new google.maps.Marker({ position: uluru, map: map });
+            }
+        </script>
+    }
+    @if (Model.place == "Sousse")
+    {
+
+        <script>
+            // Initialize and add the map
+            function initMap() {
+
+                var uluru = { lat: 35.8283295, lng: 10.5830349 };
+                // The map, centered at Uluru
+                var map = new google.maps.Map(
+                    document.getElementById('map'), { zoom: 4, center: uluru });
+                // The marker, positioned at Uluru
+                var marker = new google.maps.Marker({ position: uluru, map: map });
+            }
+        </script>
+    }
+    @if (Model.place == "Tunis")
+    {
+
+        <script>
+            // Initialize and add the map
+            function initMap() {
+
+                var uluru = { lat: 36.81897, lng: 10.16579 };
+                // The map, centered at Uluru
+                var map = new google.maps.Map(
+                    document.getElementById('map'), { zoom: 4, center: uluru });
+                // The marker, positioned at Uluru
+                var marker = new google.maps.Marker({ position: uluru, map: map });
+            }
+        </script>
+    }
+    @if (Model.place == "Lyon")
+    {
+
+        <script>
+            // Initialize and add the map
+            function initMap() {
+
+                var uluru = { lat: 45.74846, lng: 4.84671 };
+                // The map, centered at Uluru
+                var map = new google.maps.Map(
+                    document.getElementById('map'), { zoom: 4, center: uluru });
+                // The marker, positioned at Uluru
+                var marker = new google.maps.Marker({ position: uluru, map: map });
+            }
+        </script>
+    }
+    @if (Model.place == "Seatle")
+    {
+
+        <script>
+            // Initialize and add the map
+            function initMap() {
+
+                var uluru = { lat: 47.608013, lng: -122.335167 };
+                // The map, centered at Uluru
+                var map = new google.maps.Map(
+                    document.getElementById('map'), { zoom: 4, center: uluru });
+                // The marker, positioned at Uluru
+                var marker = new google.maps.Marker({ position: uluru, map: map });
+            }
+        </script>
+    }
+    @if (Model.place == "Tokyo")
+    {
+
+        <script>
+            // Initialize and add the map
+            function initMap() {
+
+                var uluru = { lat: 35.652832, lng: 139.839478};
+                // The map, centered at Uluru
+                var map = new google.maps.Map(
+                    document.getElementById('map'), { zoom: 4, center: uluru });
+                // The marker, positioned at Uluru
+                var marker = new google.maps.Marker({ position: uluru, map: map });
+            }
+        </script>
+    }
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5ZGyW3DWlaXpcb1lCoF5o3Iamovy4K_o&language=fr&callback=initMap"
+            type="text/javascript" async defer></script>
+
+</div>

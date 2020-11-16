@@ -1,0 +1,138 @@
+﻿@model Piiii.domain.missionexpenses
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/Layout1.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>missionexpenses</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.type)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.image)
+        </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.cost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.description)
+        </dd>
+
+        <div id="box" runat="server" visible="false">
+            <dt>
+                @Html.DisplayNameFor(model => model.kilomtrage)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.kilomtrage)
+            </dd>
+
+        </div>
+
+
+        <dd>
+
+            <img style="width:300px; height:300px" src="@Url.Content("~/Uploads/"+Model.image)" />
+        </dd>
+    </dl>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#type").change(function () {
+                if ($(this).val() != "Transport") {
+                    $("#box").hide();
+                } else {
+                    $("#box").show();
+                }
+            });
+        });
+    </script>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.refrence }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+
+<style>
+    /* Always set the map height explicitly to define the size of the div
+        * element that contains the map. */
+    #map {
+        height: 600px;
+    }
+</style>
+<div class="row"></div>
+<div id="map">
+    <script>
+        var map;
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: 36.800072, lng: 10.187060 },
+                zoom: 12
+            });
+
+            $.get("/Home/GetAllLocation", function (data, status) {
+                var marker = [];
+                var contentString = [];
+                var infowindow = [];
+                for (var i = 0; i < data.length; i++) {
+                    marker[i] = new google.maps.Marker({
+                        position: { lat: data[i].Lat, lng: data[i].Long },
+                        map: map
+                    });
+                    //code events
+                    contentString[i] = '<div id="content">' +
+                        '<div id="siteNotice"></div>' +
+                        '<h1 id="firstHeading" class="firstHeading">' + data[i].StoreName + '</h1>' +
+                        '<div id="bodyContent"><p><b>' + data[i].Address + '</b><br>' +
+                        '</div></div>';
+
+                    infowindow[i] = new google.maps.InfoWindow({
+                        content: contentString[i]
+                    });
+                    var markerValue = marker[i];
+                    google.maps.event.addListener(marker[i], 'mouseover', (function (markerValue, i) {
+                        return function () {
+                            infowindow[i].open(map, marker[i]);
+                        }
+                    })(marker[i], i));
+                    google.maps.event.addListener(marker[i], 'mouseout', (function (markerValue, i) {
+                        return function () {
+                            infowindow[i].close();
+                        }
+                    })(marker[i], i));
+                }
+            })
+        }
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5ZGyW3DWlaXpcb1lCoF5o3Iamovy4K_o&language=fr&callback=initMap"
+            type="text/javascript" async defer></script>
+</div>

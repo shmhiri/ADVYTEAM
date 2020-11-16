@@ -1,0 +1,95 @@
+﻿@model IEnumerable<Piiii.web.Models.formationModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout1.cshtml";
+}
+
+<div class="colorlib-work">
+    <div class="container">
+        <h2>Index</h2>
+
+        <p>
+            @Html.ActionLink("Create New", "Create")
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.nom_for)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.prerequis)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.catalog.nom_cat)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.quiz.QuizName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.date_debut)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.duree)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.lieu)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.niveauobt)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.nom_anim)
+                </th>
+
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nom_for)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.prerequis)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.catalog.nom_cat)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.quiz.QuizName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.date_debut)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.duree)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.lieu)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.niveauobt)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nom_anim)
+                </td>
+
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.id_for }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.id_for }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.id_for })
+                </td>
+            </tr>
+            }
+
+        </table>
+</div>
+</div>
